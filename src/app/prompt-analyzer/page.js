@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import diff from "diff";
 
 export default function PromptAnalyzer() {
   const [prompt, setPrompt] = useState("");
@@ -86,8 +87,7 @@ export default function PromptAnalyzer() {
         Prompt Analyzer
       </h1>
       <p className="text-lg text-white text-center mb-4">
-        Type your prompt below, and we'll analyze its quality and suggest
-        improvements.
+        Type your prompt below, and we'll analyze its quality and suggest improvements.
       </p>
 
       <form onSubmit={handleAnalyzePrompt} className="mb-6">
@@ -107,22 +107,22 @@ export default function PromptAnalyzer() {
 
       {analysis && (
         <div className="mt-8">
-          <h2 className="text-2xl font-semibold text-white mb-2">
-            Prompt Analysis
-          </h2>
-          <div className="flex justify-around mb-4">
-            <div className="text-white">
-              Clarity: {renderRating(analysis.categories.clarity)}
-            </div>
-            <div className="text-white">
-              Specificity: {renderRating(analysis.categories.specificity)}
-            </div>
-            <div className="text-white">
-              Context: {renderRating(analysis.categories.context)}
-            </div>
-            <div className="text-white">
-              Length: {renderRating(analysis.categories.length)}
-            </div>
+          <h2 className="text-2xl font-semibold text-white mb-2">Prompt Analysis</h2>
+          <div className="flex flex-col space-y-4">
+            {Object.entries(analysis.categories).map(([category, score]) => (
+              <div key={category} className="text-white">
+                <div className="flex justify-between mb-1">
+                  <span>{category.charAt(0).toUpperCase() + category.slice(1)}:</span>
+                  <span>{score}/10</span>
+                </div>
+                <div className="relative w-full h-4 bg-gray-300 rounded">
+                  <div
+                    className={`absolute h-full rounded ${score < 5 ? "bg-red-500" : "bg-green-500"}`}
+                    style={{ width: `${(score / 10) * 100}%` }}
+                  ></div>
+                </div>
+              </div>
+            ))}
           </div>
 
           <h3 className="font-semibold text-white">Original Prompt</h3>
@@ -146,21 +146,15 @@ export default function PromptAnalyzer() {
   );
 }
 
-// Function to render ratings
-const renderRating = (score) => {
-  return "⭐️".repeat(score);
-};
-
 // Function to highlight differences between original and improved prompt
 const highlightDifferences = (original, improved) => {
-  // Use diff library to compare strings
-  const diff = require("diff");
-  const changes = diff.diffWords(original, improved);
+    const diff = require("diff");
+    const changes = diff.diffWords(original, improved);
 
   return changes
-    .map((part, index) => {
+    .map((part) => {
       const color = part.added ? "green" : part.removed ? "red" : "black";
-      return `<span key=${index} style="color:${color};">${part.value}</span>`;
+      return `<span style="color:${color};">${part.value}</span>`;
     })
     .join(" ");
 };
