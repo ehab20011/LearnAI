@@ -159,7 +159,45 @@ export default function HowToAIPage() {
           </div>
         </motion.div>
 
-        {/* Lesson 4 - Microsoft CoPilot */}
+        
+        {/* Lesson 4 - Google Gemini */}
+<motion.div
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+  className="relative w-64"
+>
+  <button
+    onClick={() => toggleDropdown('lesson5')}
+    className="w-full py-3 px-8 bg-gradient-to-r from-teal-500 to-teal-700 hover:from-teal-700 hover:to-teal-500 rounded-full text-lg font-semibold shadow-lg transform transition-all duration-500 hover:scale-105 hover:shadow-2xl cursor-pointer"
+  >
+    Google Gemini
+  </button>
+
+    <div
+        className={`absolute top-20 w-full p-4 bg-white text-gray-800 rounded-lg shadow-lg z-10 transition-all duration-500 ease-in-out transform ${
+        activeDropdown === 'lesson5' ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'
+        }`}
+    >
+        <Image
+        src="/images/gemini.png"
+        alt="Google Gemini Logo"
+        width={100}
+        height={40}
+        className="mx-auto mb-2"
+        />
+        <p className="text-sm mb-4">
+        Discover Google Gemini, an advanced AI model for enhancing creative tasks, research, and more with powerful language understanding.
+        </p>
+        <Link href="/howtoai/lesson5">
+        <button className="w-full py-2 px-4 bg-teal-600 text-white rounded-md hover:bg-teal-700">
+            Take me to Lesson 5
+        </button>
+        </Link>
+    </div>
+    </motion.div>
+
+
+        {/* Lesson 5 - Microsoft CoPilot */}
         <motion.div
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -194,8 +232,11 @@ export default function HowToAIPage() {
             </Link>
           </div>
         </motion.div>
-      </div>
 
+      </div>
+        
+
+    
       {/* Dashboard Section */}
       <div className="w-full max-w-4xl" style={{ marginTop: '25rem' }} classname="bg-white text-gray-900 rounded-xl p-8 shadow-2xl">
       <h3 className="text-3xl font-bold mb-4">Hello {userProgress.name}!</h3>

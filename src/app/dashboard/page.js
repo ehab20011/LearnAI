@@ -14,7 +14,14 @@ export default function DashboardPage() {
     setActiveDropdown(activeDropdown === option ? null : option);
   };
 
-  // Animation variants for the dropdown
+  // Animation variants for the page transition
+  const pageVariants = {
+    hidden: { opacity: 0, y: 50 },
+    enter: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: 50 },
+  };
+
+  // Animation variants for the dropdowns
   const dropdownVariants = {
     hidden: { opacity: 0, height: 0 },
     visible: { opacity: 1, height: 'auto' },
@@ -23,10 +30,12 @@ export default function DashboardPage() {
   return (
     <>
       <Header />
+      {/* Page transition animation using motion.div */}
       <motion.div
         initial="hidden"
         animate="enter"
         exit="exit"
+        variants={pageVariants}
         transition={{ duration: 0.6, ease: 'easeInOut' }}
         className="min-h-screen bg-gradient-to-br from-gray-800 to-gray-900 flex flex-col items-center justify-center py-10"
       >
@@ -102,30 +111,30 @@ export default function DashboardPage() {
           {/* AI Game Button with Dropdown */}
           <div className="relative w-80">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <button
+              <button
                 onClick={() => toggleDropdown('ai-game')}
                 className="w-full py-6 px-12 bg-gradient-to-r from-purple-500 to-purple-700 hover:from-purple-700 hover:to-purple-500 text-white rounded-lg text-2xl font-semibold shadow-lg transform transition-all duration-500 hover:scale-105 hover:shadow-2xl"
-                >
+              >
                 AI Trainer Quiz
-                </button>
+              </button>
             </motion.div>
 
             {/* Dropdown Content */}
             <motion.div
-                variants={dropdownVariants}
-                initial="hidden"
-                animate={activeDropdown === 'ai-game' ? 'visible' : 'hidden'}
-                transition={{ duration: 0.4, ease: 'easeInOut' }}
-                className="overflow-hidden"
+              variants={dropdownVariants}
+              initial="hidden"
+              animate={activeDropdown === 'ai-game' ? 'visible' : 'hidden'}
+              transition={{ duration: 0.4, ease: 'easeInOut' }}
+              className="overflow-hidden"
             >
-                <div className="bg-gray-700 text-white p-4 rounded-lg mt-4 shadow-md">
+              <div className="bg-gray-700 text-white p-4 rounded-lg mt-4 shadow-md">
                 <p className="text-sm mb-4">
-                    Test your knowledge of AI models with our AI Trainer Quiz. Challenge yourself and see how well you've mastered the concepts!
+                  Test your knowledge of AI models with our AI Trainer Quiz. Challenge yourself and see how well you've mastered the concepts!
                 </p>
                 <Link href="/ai-game">
-                    <button className="w-full py-2 px-4 bg-purple-600 text-white rounded-md hover:bg-purple-700">
+                  <button className="w-full py-2 px-4 bg-purple-600 text-white rounded-md hover:bg-purple-700">
                     Play AI Trainer Quiz
-                    </button>
+                  </button>
                 </Link>
               </div>
             </motion.div>
