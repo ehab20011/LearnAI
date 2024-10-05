@@ -12,6 +12,7 @@ import {
 export default function LoginPage() {
   const [isSignIn, setIsSignIn] = useState(true); // State to toggle between Sign In and Sign Up
   const [isForgotPassword, setIsForgotPassword] = useState(false); // State to toggle Forgot Password view
+  const [errorMessage, setErrorMessage] = useState(""); // State for storing error messages
   const router = useRouter(); // Use useRouter from Next.js to navigate
 
   const handleForgotPassword = () => {
@@ -43,18 +44,18 @@ export default function LoginPage() {
 
     if (!email) {
       console.log("Email is missing");
+      setErrorMessage("Please enter an email address");
       return;
     }
 
-    if (!isForgotPassword && !password) {
+    if (!password) {
       console.log("Password is missing");
+      setErrorMessage("Please enter a password");
       return;
     }
 
     try {
-      if (isForgotPassword) {
-        console.log("Forgot password for:", email);
-      } else if (isSignIn) {
+      if (isSignIn) {
         // Sign In logic
         const authData = await signInWithEmailAndPassword(
           userDatabase,
@@ -75,7 +76,38 @@ export default function LoginPage() {
       }
     } catch (error) {
       console.error("Error during authentication:", error.message);
+      
+      // Handle and log specific Firebase errors
+      switch (error.code) {
+        case "auth/invalid-email":
+          setErrorMessage("Invalid email address format.");
+          break;
+        case "auth/user-disabled":
+          setErrorMessage("User account is disabled.");
+          break;
+        case "auth/user-not-found":
+          setErrorMessage("No user found with this email.");
+          break;
+        case "auth/wrong-password":
+          setErrorMessage("Incorrect password.");
+          break;
+        case "auth/email-already-in-use":
+          setErrorMessage("Email is already in use.");
+          break;
+        case "auth/weak-password":
+          setErrorMessage("Password is too weak.");
+          break;
+        default:
+          setErrorMessage("An error occurred. Please try again.");
+          break;
+      }
     }
+  };
+
+  // Function to toggle between Sign In and Sign Up
+  const toggleSignInSignUp = () => {
+    setIsSignIn(!isSignIn);
+    setErrorMessage(""); // Reset error message when toggling between Sign In and Sign Up
   };
 
   return (
@@ -86,6 +118,11 @@ export default function LoginPage() {
             <h2 className="text-2xl font-bold text-center mb-6">
               {isSignIn ? "Sign In" : "Sign Up"}
             </h2>
+            {errorMessage && (
+              <div className="text-red-500 text-sm text-center mb-4">
+                {errorMessage}
+              </div>
+            )}
             <form onSubmit={handleSubmit} className="space-y-4">
               <input
                 className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -98,7 +135,6 @@ export default function LoginPage() {
                 name="password"
                 type="password"
                 placeholder="Password"
-                style={{ display: isSignIn ? "block" : "none" }}
               />
               {isSignIn && (
                 <div className="text-right">
@@ -123,7 +159,7 @@ export default function LoginPage() {
               {isSignIn ? "Don't have an account?" : "Already have an account?"}
               <button
                 type="button"
-                onClick={() => setIsSignIn(!isSignIn)}
+                onClick={toggleSignInSignUp}
                 className="text-blue-500 font-semibold hover:underline ml-1"
               >
                 {isSignIn ? "Sign Up" : "Sign In"}
