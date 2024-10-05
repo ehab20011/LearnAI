@@ -62,7 +62,7 @@ export default function AboutUsPage() {
             </div>
           </a>
 
-          <a href="https://www.linkedin.com/in/davidmejia1/overlay/photo/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/davidmejia1/" target="_blank" rel="noopener noreferrer">
             <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white hover:scale-105 transition-transform duration-300">
               <Image
                 src="/images/david.jpg"
@@ -116,6 +116,16 @@ export default function AboutUsPage() {
               alt="Microsoft CoPilot Logo"
               width={128}
               height={128}
+              className="object-cover"
+            />
+          </div>
+
+          <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white hover:scale-105 transition-transform duration-300">
+            <Image
+              src="/images/gemini.png"
+              alt="gemini Logo"
+              width={200}
+              height={100}
               className="object-cover"
             />
           </div>

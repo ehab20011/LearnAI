@@ -19,15 +19,10 @@ export default function Header() {
         </h1>
 
         <nav className="flex space-x-6 items-center">
-          <Link href="/prompt-analyzer" className="hover:text-blue-400">
-            Prompt Analyzer
+          <Link href="/dashboard" className="hover:text-blue-400">
+            Dashboard
           </Link>
-          <Link href="/howtoai" className="hover:text-green-400">
-            LearnAI
-          </Link>
-          <Link href="/ai-game" className="hover:text-yellow-400">
-            AI Quiz
-          </Link>
+          
           <Link href="/aboutus" className="hover:text-yellow-400">
             About Us
           </Link>

@@ -1,8 +1,13 @@
 // src/app/howtoai/lesson1/page.js
+"use client"; // This makes the component a Client Component
 import Image from 'next/image';
+import Header from '../../../components/Header';
+import Footer from '../../../components/Footer';
 
 export default function Lesson1Page() {
     return (
+        <>
+        <Header />
         <div className="max-w-4xl mx-auto p-6">
           <h1 className="text-3xl font-bold mb-6">Lesson 1: Using Google's Notebook LM</h1>
           
@@ -158,5 +163,7 @@ export default function Lesson1Page() {
 
         </div>
 
+        <Footer />
+        </>
     );
   }
