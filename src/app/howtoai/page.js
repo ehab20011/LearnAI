@@ -1,5 +1,3 @@
-// src/app/howtoai/page.js
-
 "use client";  // This makes the component a Client Component
 
 import { useState } from 'react';
@@ -8,6 +6,17 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+
+// Sample progress data
+const userProgress = {
+  name: "John Doe",  // Replace this with actual user's name
+  lessons: [
+    { name: "ChatGPT", progress: 40 },
+    { name: "Claude", progress: 70 },
+    { name: "Google NotebookLM", progress: 50 },
+    { name: "Microsoft CoPilot", progress: 30 }
+  ]
+};
 
 export default function HowToAIPage() {
   // State to control dropdown visibility
@@ -44,13 +53,13 @@ export default function HowToAIPage() {
         
         {/* Lesson 1 - Google NotebookLM */}
         <motion.div
-          whileHover={{ scale: 1.05 }}
+          whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.95 }}
           className="relative w-64"
         >
           <button
             onClick={() => toggleDropdown('lesson1')}
-            className="w-full py-3 px-8 bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-700 hover:to-blue-500 rounded-full text-lg font-semibold shadow-lg transform transition-all duration-500 hover:scale-105 hover:shadow-2xl cursor-pointer"
+            className="w-full py-5 px-8 bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-700 hover:to-blue-500 rounded-full text-lg font-semibold shadow-lg transform transition-all duration-500 hover:scale-105 hover:shadow-2xl cursor-pointer"
           >
             Google NotebookLM
           </button>
@@ -185,6 +194,28 @@ export default function HowToAIPage() {
             </Link>
           </div>
         </motion.div>
+      </div>
+
+      {/* Dashboard Section */}
+      <div className="w-full max-w-4xl" style={{ marginTop: '25rem' }} classname="bg-white text-gray-900 rounded-xl p-8 shadow-2xl">
+      <h3 className="text-3xl font-bold mb-4">Hello {userProgress.name}!</h3>
+        <p className="mb-6">Here's your progress so far:</p>
+
+        {/* Display progress for each lesson */}
+        {userProgress.lessons.map((lesson, index) => (
+          <div key={index} className="mb-4">
+            <div className="flex justify-between items-center mb-1">
+              <span className="text-lg font-semibold">{lesson.name}</span>
+              <span>{lesson.progress}%</span>
+            </div>
+            <div className="w-full bg-gray-300 rounded-full h-4">
+              <div
+                className="bg-indigo-600 h-4 rounded-full"
+                style={{ width: `${lesson.progress}%` }}
+              ></div>
+            </div>
+          </div>
+        ))}
       </div>
     </motion.div>
     <Footer />
