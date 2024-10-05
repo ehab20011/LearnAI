@@ -26,9 +26,11 @@ export default function Header() {
           <Link href="/aboutus" className="hover:text-yellow-400">
             About Us
           </Link>
+
+          <Link href="/language" className="hover:text-yellow-400">
+            Language
+          </Link>
           
-
-
           <button
                 onClick={handleSignOut}
                 className="ml-4 bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl"

@@ -86,10 +86,12 @@ export default function HomePage() {
           <span className={cursorVisible ? "inline" : "hidden"}>|</span>
         </h1>
 
-        {/* Sign Up / Log In Text with Hover Effect */}
-        <span className="text-blue-500 hover:text-blue-700 cursor-pointer" onClick={handleLoginClick}>
-          Log In
-        </span>
+        <div className="flex items-center">
+          {/* Sign Up / Log In Text with Hover Effect */}
+          <span className="text-blue-500 hover:text-blue-700 cursor-pointer" onClick={handleLoginClick}>
+            Log In
+          </span>
+        </div>
       </div>
 
       {/* Center the Globe - only render on the client */}
