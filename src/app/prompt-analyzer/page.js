@@ -29,7 +29,7 @@ export default function PromptAnalyzer() {
   };
 
   const analyzePromptWithOpenAI = async (prompt) => {
-    const apiKey = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
+    //const apiKey = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
 
     const response = await axios.post(
       "https://api.openai.com/v1/chat/completions",
@@ -50,6 +50,8 @@ export default function PromptAnalyzer() {
         },
       }
     );
+
+    console.log("Raw API Response:", response.data);
 
     const analysisText = response.data.choices[0].message.content;
 
@@ -122,7 +124,8 @@ export default function PromptAnalyzer() {
               <div className="bg-white rounded-lg p-4 shadow-md mb-4">
                 <h3 className="font-semibold text-gray-800 mb-2">Analysis Categories</h3>
                 <ul className="space-y-2">
-                  {Object.entries(analysis.categories).map(([category, score]) => (
+                  {Object.entries(analysis.categories)
+                  .map(([category, score]) => (
                     <li key={category} className="flex justify-between text-gray-800">
                       <span className="font-medium">{category.charAt(0).toUpperCase() + category.slice(1)}:</span>
                       <span>{score}/10</span>
