@@ -130,15 +130,6 @@ export default function AboutUsPage() {
             />
           </div>
 
-          <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white hover:scale-105 transition-transform duration-300">
-            <Image
-              src="/images/claude.png"
-              alt="Claude Logo"
-              width={200}
-              height={100}
-              className="object-cover"
-            />
-          </div>
         </div>
       </motion.div>
       <Footer />

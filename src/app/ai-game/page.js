@@ -8,30 +8,59 @@ import Image from 'next/image';
 // Sample quiz data grouped by models
 // Sample quiz data grouped by models
 const quizData = {
-    claude: [
-      {
-        question: "What is Claude known for?",
-        options: [
-          "Text-to-speech generation",
-          "Creative content generation",
-          "AI-powered decision making",
-          "Large language model processing",
-        ],
-        answer: 3,
-      },
-    ],
     chatgpt: [
-      {
-        question: "What is the main function of ChatGPT?",
-        options: [
-          "Image generation",
-          "Natural language processing and conversation",
-          "Creating 3D models",
-          "Editing video content",
-        ],
-        answer: 1,
-      },
-    ],
+        {
+          question: "What is ChatGPT primarily used for?",
+          options: [
+            "Image generation",
+            "Natural language processing and conversation",
+            "Creating 3D models",
+            "Video editing",
+          ],
+          answer: 1,
+        },
+        {
+          question: "What is a 'prompt' in the context of ChatGPT?",
+          options: [
+            "A result produced by ChatGPT",
+            "A command or question that you input into ChatGPT",
+            "A data model used to train ChatGPT",
+            "A script for automating responses",
+          ],
+          answer: 1,
+        },
+        {
+          question: "How can you improve ChatGPT’s responses?",
+          options: [
+            "Rephrasing the prompt or adding more context",
+            "Submitting multiple prompts at once",
+            "Using different fonts in the prompt",
+            "Shortening the prompt to a single word",
+          ],
+          answer: 0,
+        },
+        {
+          question: "Which of the following is NOT a capability of ChatGPT?",
+          options: [
+            "Answering questions",
+            "Generating creative content",
+            "Predicting future stock prices",
+            "Assisting with coding tasks",
+          ],
+          answer: 2,
+        },
+        {
+          question: "Which of the following is a tip for effective use of ChatGPT?",
+          options: [
+            "Use vague instructions for broader answers",
+            "Provide clear and detailed instructions",
+            "Only use one-word prompts for faster responses",
+            "Avoid interacting with the results",
+          ],
+          answer: 1,
+        },
+      ],
+      
     copilot: [
       {
         question: "What does Microsoft CoPilot help with?",
@@ -162,23 +191,6 @@ export default function AiTrainerGamePage() {
           className="rounded-full mx-auto"
         />
         <p className="text-center mt-4 text-lg">ChatGPT</p>
-      </motion.div>
-
-      {/* Claude */}
-      <motion.div
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        className="cursor-pointer"
-        onClick={() => startQuiz('claude')}
-      >
-        <Image
-          src="/images/claude.png"
-          alt="Claude"
-          width={150}
-          height={150}
-          className="rounded-full mx-auto"
-        />
-        <p className="text-center mt-4 text-lg">Claude</p>
       </motion.div>
 
       {/* Google Gemini */}

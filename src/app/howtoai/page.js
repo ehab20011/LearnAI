@@ -12,7 +12,7 @@ const userProgress = {
   name: "John Doe",  // Replace this with actual user's name
   lessons: [
     { name: "ChatGPT", progress: 40 },
-    { name: "Claude", progress: 70 },
+    { name: "Gemini", progress: 70 },
     { name: "Google NotebookLM", progress: 50 },
     { name: "Microsoft CoPilot", progress: 30 }
   ]
@@ -123,44 +123,9 @@ export default function HowToAIPage() {
           </div>
         </motion.div>
 
-        {/* Lesson 3 - Claude */}
-        <motion.div
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="relative w-64"
-        >
-          <button
-            onClick={() => toggleDropdown('lesson3')}
-            className="w-full py-3 px-8 bg-gradient-to-r from-pink-500 to-pink-700 hover:from-pink-700 hover:to-pink-500 rounded-full text-lg font-semibold shadow-lg transform transition-all duration-500 hover:scale-105 hover:shadow-2xl cursor-pointer"
-          >
-            Claude
-          </button>
-
-          <div
-            className={`absolute top-20 w-full p-4 bg-white text-gray-800 rounded-lg shadow-lg z-10 transition-all duration-500 ease-in-out transform ${
-              activeDropdown === 'lesson3' ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'
-            }`}
-          >
-            <Image
-              src="/images/claude.png"
-              alt="Claude Logo"
-              width={300}
-              height={40}
-              className="mx-auto mb-2"
-            />
-            <p className="text-sm mb-4">
-              Explore Claude, a state-of-the-art language model by Anthropic, and learn how it can assist with advanced tasks.
-            </p>
-            <Link href="/howtoai/lesson3">
-              <button className="w-full py-2 px-4 bg-pink-600 text-white rounded-md hover:bg-pink-700">
-                Take me to Lesson 3
-              </button>
-            </Link>
-          </div>
-        </motion.div>
 
         
-        {/* Lesson 4 - Google Gemini */}
+        {/* Lesson 3 - Google Gemini */}
 <motion.div
   whileHover={{ scale: 1.05 }}
   whileTap={{ scale: 0.95 }}
@@ -197,7 +162,7 @@ export default function HowToAIPage() {
     </motion.div>
 
 
-        {/* Lesson 5 - Microsoft CoPilot */}
+        {/* Lesson 4 - Microsoft CoPilot */}
         <motion.div
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -232,10 +197,8 @@ export default function HowToAIPage() {
             </Link>
           </div>
         </motion.div>
-
       </div>
         
-
     
       {/* Dashboard Section */}
       <div className="w-full max-w-4xl" style={{ marginTop: '25rem' }} classname="bg-white text-gray-900 rounded-xl p-8 shadow-2xl">

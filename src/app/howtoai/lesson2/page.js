@@ -352,7 +352,7 @@ export default function Lesson2Page() {
   <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 my-8">
     <div className="w-full lg:w-1/2">
       <Image
-        src="/images/prompt-analyzer.png"
+        src="/images/gpt7.png"
         alt="Prompt Analyzer Tool"
         width={600}
         height={338}
@@ -374,8 +374,257 @@ export default function Lesson2Page() {
   </div>
 </section>
 
-        </div>
+{/* ************ Step 7 : Understanding the Different GPT Models */ }
+<section className="mb-12">
+  <h2 className="text-3xl font-bold mb-6 text-sky-500 border-b-2 border-sky-300 pb-2">
+    Step 7: Understanding the Different GPT Models
+  </h2>
 
+  <p className="mb-4 text-lg">
+    OpenAI has developed several versions of GPT, each with its own strengths and applications. Let’s explore the different models, their unique features, and when to use them.
+  </p>
+
+  {/* New subsection: GPT-3, GPT-3.5, and GPT-4 */}
+  <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 my-6 max-w-3xl mx-auto">
+    <h3 className="text-xl font-semibold mb-2 text-blue-800">GPT-3, GPT-3.5, and GPT-4</h3>
+    <p className="mb-2 text-sm text-gray-700">
+      Each version of GPT has been trained on massive datasets, but they differ in scale, complexity, and power.
+    </p>
+    <ul className="list-disc list-inside mt-2 space-y-2 text-sm text-gray-700">
+      <li>
+        <strong>GPT-3:</strong> Known for its versatility, GPT-3 can handle a wide variety of tasks such as text generation, summarization, and answering questions. It’s one of the most widely used models today.
+      </li>
+      <li>
+        <strong>GPT-3.5:</strong> An enhanced version of GPT-3 with improved performance in conversation, context understanding, and creative tasks.
+      </li>
+      <li>
+        <strong>GPT-4:</strong> The latest and most advanced model with improved reasoning abilities, complex task handling, and enhanced accuracy. Ideal for complex tasks requiring in-depth understanding.
+      </li>
+    </ul>
+    <p className="mt-2 text-sm text-gray-700">
+      While all of these models are incredibly powerful, GPT-4 is recommended for tasks requiring deeper reasoning, while GPT-3 and GPT-3.5 are great for general conversational AI and content generation.
+    </p>
+  </div>
+
+  {/* Visual of Models */}
+  <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 my-8">
+    <div className="w-full lg:w-1/2">
+      <Image
+        src="/images/gpt8.png"
+        alt="Different GPT Models"
+        width={600}
+        height={338}
+        layout="responsive"
+        className="rounded-lg shadow-md"
+      />
+    </div>
+    <div className="w-full lg:w-1/2">
+      <h3 className="text-xl font-semibold mb-4">When to Use Each Model</h3>
+      <ul className="list-disc list-inside text-lg">
+        <li><strong>GPT-3:</strong> General text generation and simpler tasks</li>
+        <li><strong>GPT-3.5:</strong> Conversational applications and creative projects</li>
+        <li><strong>GPT-4:</strong> Complex reasoning, advanced problem-solving, and tasks requiring more detailed responses</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+{/* ************ Step 8 : Creating Your Own GPT Model */ }
+<section className="mb-12">
+  <h2 className="text-3xl font-bold mb-6 text-sky-500 border-b-2 border-sky-300 pb-2">
+    Step 8: Creating Your Own GPT Model
+  </h2>
+
+  <p className="mb-4 text-lg">
+    OpenAI allows developers to create and customize their own GPT models using their API. In this step, we will guide you through the basics of building your own GPT-based solution.
+  </p>
+
+  {/* New subsection: Why Create Your Own Model? */}
+  <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 my-6 max-w-3xl mx-auto">
+    <h3 className="text-xl font-semibold mb-2 text-blue-800">Why Create Your Own GPT Model?</h3>
+    <p className="text-sm text-gray-700">
+      Building your own GPT model allows you to tailor it to your specific needs, whether it's for conversational AI, customer service, coding assistance, or content generation. You can fine-tune the model for better accuracy in your domain.
+    </p>
+  </div>
+
+  {/* Steps to Create Your GPT Model */}
+  <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 my-8">
+    <div className="w-full lg:w-1/2">
+      <Image
+        src="/images/gpt9.png"
+        alt="Creating Your Own GPT Model"
+        width={600}
+        height={338}
+        layout="responsive"
+        className="rounded-lg shadow-md"
+      />
+    </div>
+    <div className="w-full lg:w-1/2">
+      <h3 className="text-xl font-semibold mb-4">Steps to Create Your GPT Model</h3>
+      <ol className="list-decimal list-inside space-y-2 text-lg">
+        <li>Sign up for an OpenAI API key on their platform.</li>
+        <li>Choose the GPT version you want to work with (e.g., GPT-3, GPT-3.5, or GPT-4).</li>
+        <li>Fine-tune the model using your specific dataset or input parameters.</li>
+        <li>Deploy the model using OpenAI's API for your project or app.</li>
+      </ol>
+    </div>
+  </div>
+
+  {/* Subsection: Benefits of Custom GPT Models */}
+  <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 my-6 max-w-3xl mx-auto">
+    <h3 className="text-xl font-semibold mb-2 text-blue-800">Benefits of Custom GPT Models</h3>
+    <ul className="list-disc list-inside mt-2 space-y-2 text-sm text-gray-700">
+      <li>Customized for your business or personal needs.</li>
+      <li>Enhanced accuracy for specific tasks or queries.</li>
+      <li>Scalable and flexible for various applications.</li>
+    </ul>
+  </div>
+
+  {/* Visual Example */}
+  <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 my-8">
+    <div className="w-full lg:w-1/2">
+      <Image
+        src="/images/gpt10.png"
+        alt="Deploying a Custom GPT Model"
+        width={600}
+        height={338}
+        layout="responsive"
+        className="rounded-lg shadow-md"
+      />
+    </div>
+    <div className="w-full lg:w-1/2">
+      <h3 className="text-xl font-semibold mb-4">Deploy Your Custom GPT Model</h3>
+      <p className="mb-4 text-lg">
+        Once you've fine-tuned your GPT model, you can deploy it to your web app or service. Use OpenAI's comprehensive API documentation to integrate it seamlessly into your application.
+      </p>
+    </div>
+  </div>
+</section>
+
+{/* ************ Step 9 : Are You a Developer? */ }
+<section className="mb-12">
+  <h2 className="text-3xl font-bold mb-6 text-sky-500 border-b-2 border-sky-300 pb-2">
+    Step 9: Are You a Developer?
+  </h2>
+
+  <p className="mb-4 text-lg">
+    If you’re a developer, this step will guide you on how to create and use an OpenAI API key. If you’re not a developer, feel free to <strong className="font-bold">skip this step</strong>.
+  </p>
+
+  {/* New subsection: For Developers - Creating and Using an API Key */}
+  <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 my-6 max-w-3xl mx-auto">
+    <h3 className="text-xl font-semibold mb-2 text-blue-800">For Developers: How to Create and Use an API Key</h3>
+    <p className="text-sm text-gray-700">
+      To interact with OpenAI’s models programmatically, you’ll need an API key. Here’s a quick guide to get started:
+    </p>
+    <ol className="list-decimal list-inside mt-2 space-y-2 text-sm text-gray-700">
+      <li>
+        <strong>Create an OpenAI Account:</strong> Go to 
+        <a 
+          href="https://platform.openai.com/signup" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="text-blue-600 hover:text-blue-800 underline font-bold"
+        >
+          OpenAI Platform
+        </a> and sign up.
+      </li>
+      <li>
+        <strong>Navigate to the API Section:</strong> Once logged in, go to the API section of your dashboard.
+      </li>
+      <li>
+        <strong>Create an API Key:</strong> Click “Create API Key” and copy the generated key.
+      </li>
+      <li>
+        <strong>Store Your API Key Securely:</strong> Keep this key secure, as it grants access to the OpenAI API.
+      </li>
+      <li>
+        <strong>Using the API Key:</strong> In your code, set up an environment variable or directly input the API key to start making requests to OpenAI’s models.
+      </li>
+    </ol>
+    <p className="text-sm text-gray-700 mt-2">
+      You can use the OpenAI API to interact with models like GPT-3, GPT-4, and more by sending requests through your applications.
+    </p>
+  </div>
+
+  {/* Visual Example for Developers */}
+  <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 my-8">
+    <div className="w-full lg:w-1/2">
+      <Image
+        src="/images/gpt11.png"
+        alt="Creating an API Key"
+        width={600}
+        height={338}
+        layout="responsive"
+        className="rounded-lg shadow-md"
+      />
+    </div>
+    <div className="w-full lg:w-1/2">
+      <h3 className="text-xl font-semibold mb-4">Example Code for Using the API Key</h3>
+      <pre className="bg-gray-100 p-4 rounded-lg shadow-md text-sm overflow-x-auto">
+        <code>
+{`import openai
+
+openai.api_key = 'YOUR_API_KEY'
+
+response = openai.Completion.create(
+  engine="text-davinci-003",
+  prompt="Explain the concept of AI.",
+  max_tokens=100
+)
+
+print(response.choices[0].text)`}  
+        </code>
+      </pre>
+    </div>
+  </div>
+
+  {/* Subsection: For Non-Developers */}
+  <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-200 my-6 max-w-3xl mx-auto">
+    <h3 className="text-xl font-semibold mb-2 text-yellow-800">For Non-Developers</h3>
+    <p className="text-sm text-gray-700">
+      If you're not a developer, you can <strong className="font-bold">skip this step</strong>. You don't need an API key for basic interactions with ChatGPT.
+    </p>
+  </div>
+</section>
+
+{/* ************ Step 10 : Get Ready for the GPT Quiz */ }
+<section className="mb-12">
+  <h2 className="text-3xl font-bold mb-6 text-sky-500 border-b-2 border-sky-300 pb-2">
+    You’re Ready to Take the GPT Quiz!
+  </h2>
+
+  <p className="mb-4 text-lg">
+    Congratulations on completing all the lessons! Now it’s time to put your knowledge to the test and see how well you understand GPT models and AI. Click the button below to start the quiz and have fun testing your skills!
+  </p>
+
+  {/* Button to route to the quiz */}
+  <div className="flex justify-center my-8">
+    <a 
+      href="/ai-game" 
+      className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-lg text-lg">
+      Start the GPT Quiz
+    </a>
+  </div>
+
+  {/* Support Section */}
+  <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 max-w-3xl mx-auto">
+    <h3 className="text-xl font-semibold mb-2 text-blue-800">Need Help?</h3>
+    <p className="text-sm text-gray-700">
+      If you have any questions or need assistance, feel free to reach out to OpenAI’s support team at{' '}
+      <a 
+        href="mailto:support@openai.com" 
+        className="text-blue-600 hover:text-blue-800 underline font-bold"
+      >
+        support@openai.com
+      </a>.
+    </p>
+  </div>
+</section>
+
+
+</div>
         <Footer />
         </>
     );
