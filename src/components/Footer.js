@@ -9,14 +9,8 @@ export default function Footer() {
   
           {/* Social Media Icons (Placeholder for now) */}
           <div className="flex space-x-4">
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
-              Twitter
-            </a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400">
+            <a href="https://github.com/ehab20011/HowToAI" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400">
               GitHub
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
-              LinkedIn
             </a>
           </div>
         </div>
