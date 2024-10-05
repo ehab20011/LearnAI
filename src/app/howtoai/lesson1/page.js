@@ -28,6 +28,7 @@ export default function Lesson1Page() {
             </p>
           </section>
     
+
         {/* Step 1, what is notebookLM and how to access it*/}
           <section className="mb-8">
             <h2 className="text-3xl font-bold mb-6 text-sky-500 border-b-2 border-sky-300 pb-2">
@@ -109,6 +110,7 @@ export default function Lesson1Page() {
             </div>
           </section>
 
+        {console.log("Step 2 begins here")}
           {/* ************ Step 2 : Making  Notebook */}
             <section className="mb-12">
                 <h2 className="text-3xl font-bold mb-6 text-sky-500 border-b-2 border-sky-300 pb-2">
@@ -123,10 +125,11 @@ export default function Lesson1Page() {
 
         {/* New subsection: What is a prompt? */}
         <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 my-6 max-w-3xl mx-auto">
-          <h3 className="text-xl font-semibold mb-2 text-blue-800">Before we move forward, what is a Prompt?</h3>
+          <h3 className="text-xl font-semibold mb-2 text-blue-800">Before we move forward, <strong>what is a prompt?</strong></h3>
           <p className="mb-2 text-sm text-gray-700">
-            In simple terms, a prompt can be a question or command that you type in the AI tool, which gives you output.
-            A deeper definition is A prompt is the text or question given to an AI language model like NotebookLM. It is an instruction for the AI to generate relevant and useful responses based on the prompt you give it.
+            In simple terms, a prompt can be a question or command that you type into the AI tool, which gives you an answer based on the prompt.
+            <br />
+            In order to get the best answer possible, we need to make a good prompt. 
           </p>
           <p className="text-sm text-gray-700">
             Effective prompting is key to getting the most out of AI tools. It involves clearly communicating your intent and providing enough context for accurate responses.
@@ -147,20 +150,23 @@ export default function Lesson1Page() {
           <div className="w-full lg:w-1/2">
             <h3 className="text-xl font-semibold mb-4">Creating a New Notebook</h3>
             <ol className="list-decimal list-inside space-y-2 text-lg">
-              <li></li>
-              <li>Give your notebook a name that reflects its purpose or the subject you're studying.</li>
-              <li>Optionally, add a description to help you remember what this notebook is for.</li>
-              <li>Click "Create" to generate your new notebook.</li>
+              <li>Copy the following link of Harvards prompt guide: <a 
+              href="https://huit.harvard.edu/news/ai-prompts"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:text-blue-800 underline hover:no-underline font-bold"
+            >
+              Harvard's AI Prompts Guide
+            </a></li>
+              <li>Under "Link" click on "website" and paste the Prompt Guide link in the search box.</li>
+              <li>After pasting the link, click on "Insert"</li>
+              <li>Hooray! You have created a new notebook that is trained on Harvards' article for getting started with prompts</li>
             </ol>
           </div>
         </div>
-
         </section>
 
-
-          
-
-
+        {/* end outerdiv */}
         </div>
 
         <Footer />
