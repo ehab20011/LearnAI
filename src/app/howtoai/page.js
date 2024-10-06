@@ -153,9 +153,9 @@ export default function HowToAIPage() {
         <p className="text-sm mb-4">
         Discover Google Gemini, an advanced AI model for enhancing creative tasks, research, and more with powerful language understanding.
         </p>
-        <Link href="/howtoai/lesson5">
+        <Link href="/howtoai/lesson3">
         <button className="w-full py-2 px-4 bg-teal-600 text-white rounded-md hover:bg-teal-700">
-            Take me to Lesson 5
+            Take me to Lesson 3
         </button>
         </Link>
     </div>
