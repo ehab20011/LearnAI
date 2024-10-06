@@ -6,7 +6,6 @@ import Footer from "../../components/Footer";
 import Image from 'next/image';
 
 // Sample quiz data grouped by models
-// Sample quiz data grouped by models
 const quizData = {
     chatgpt: [
         {
@@ -61,18 +60,58 @@ const quizData = {
         },
       ],
       
-    copilot: [
-      {
-        question: "What does Microsoft CoPilot help with?",
-        options: [
-          "Document summarization and task automation",
-          "Voice-to-text transcription",
-          "Video editing",
-          "Data visualization",
-        ],
-        answer: 0,
-      },
-    ],
+      copilotQuiz: [
+        {
+          question: "What is one of the core capabilities of Google Co-Pilot?",
+          options: [
+            "Automating tasks",
+            "Video editing",
+            "Voice transcription",
+            "Image creation",
+          ],
+          answer: 0,
+        },
+        {
+          question: "Which of the following steps is necessary to begin using Google Co-Pilot?",
+          options: [
+            "Download the desktop app",
+            "Sign in with your Google account",
+            "Set up a payment plan",
+            "Install browser extensions",
+          ],
+          answer: 1,
+        },
+        {
+          question: "What feature does Google Co-Pilot provide when generating responses to your questions?",
+          options: [
+            "Only text-based responses",
+            "Suggested prompts and images",
+            "Video editing capabilities",
+            "Data export in PDF format",
+          ],
+          answer: 1,
+        },
+        {
+          question: "What customization options are available in Google Co-Pilot’s settings?",
+          options: [
+            "Voice-to-text settings",
+            "Theme appearance and privacy settings",
+            "Video resolution settings",
+            "Chatbot language preferences",
+          ],
+          answer: 1,
+        },
+        {
+          question: "How can you access Google Co-Pilot on the go?",
+          options: [
+            "By using a mobile app available in app stores",
+            "By downloading an external plugin",
+            "By using the desktop version only",
+            "Through direct email access",
+          ],
+          answer: 0,
+        },
+      ],      
     googleNotebook: [
       {
         question: "What is the primary purpose of Google NotebookLM?",
