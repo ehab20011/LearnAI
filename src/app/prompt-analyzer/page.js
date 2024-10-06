@@ -30,6 +30,7 @@ export default function PromptAnalyzer() {
 
   const analyzePromptWithOpenAI = async (prompt) => {
     const apiKey = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
+    // hii
 
     const response = await axios.post(
       "https://api.openai.com/v1/chat/completions",
@@ -53,19 +54,32 @@ export default function PromptAnalyzer() {
 
     const analysisText = response.data.choices[0].message.content;
 
+    console.log("Message Content:", analysisText);
+
     // Parse the analysis text for ratings and improvements
     const categories = {};
     const lines = analysisText.split("\n");
 
-    lines.forEach((line) => {
+    const categoryLines = lines.slice(0, -1); // Excludes the last line
+
+    categoryLines.forEach((line) => {
       const match = line.match(/^(.*?):\s*(\d+|.*)/);
       if (match) {
         categories[match[1].toLowerCase()] = parseInt(match[2]) || match[2];
       }
     });
 
-    const improvementMatch = analysisText.match(/Improvement:\s*(.*)/);
-    const improvedPrompt = improvementMatch ? improvementMatch[1].trim() : "No improvement suggested.";
+    //const improvementMatch = lines[lines.length - 1].match(/(?:Suggested improvement:|Improved prompt:)\s*(.*)/);
+    //const improvedPrompt = improvementMatch ? improvementMatch[1].trim() : "No improvement suggested.";
+
+    const improvedPrompt = lines[lines.length - 1].trim() || "No improvement suggested.";
+
+
+    //console.log(improvementMatch);
+    console.log("xyz");
+    console.log(improvedPrompt);
+    console.log("xyz");
+    console.log(categories);
 
     return {
       categories,
@@ -122,7 +136,8 @@ export default function PromptAnalyzer() {
               <div className="bg-white rounded-lg p-4 shadow-md mb-4">
                 <h3 className="font-semibold text-gray-800 mb-2">Analysis Categories</h3>
                 <ul className="space-y-2">
-                  {Object.entries(analysis.categories).map(([category, score]) => (
+                  {Object.entries(analysis.categories)
+                  .map(([category, score]) => (
                     <li key={category} className="flex justify-between text-gray-800">
                       <span className="font-medium">{category.charAt(0).toUpperCase() + category.slice(1)}:</span>
                       <span>{score}/10</span>
