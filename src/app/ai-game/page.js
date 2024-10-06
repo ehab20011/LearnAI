@@ -6,6 +6,7 @@ import Footer from "../../components/Footer";
 import Image from 'next/image';
 
 // Sample quiz data grouped by models
+// Sample quiz data grouped by models
 const quizData = {
     chatgpt: [
         {
@@ -60,58 +61,18 @@ const quizData = {
         },
       ],
       
-      copilotQuiz: [
-        {
-          question: "What is one of the core capabilities of Google Co-Pilot?",
-          options: [
-            "Automating tasks",
-            "Video editing",
-            "Voice transcription",
-            "Image creation",
-          ],
-          answer: 0,
-        },
-        {
-          question: "Which of the following steps is necessary to begin using Google Co-Pilot?",
-          options: [
-            "Download the desktop app",
-            "Sign in with your Google account",
-            "Set up a payment plan",
-            "Install browser extensions",
-          ],
-          answer: 1,
-        },
-        {
-          question: "What feature does Google Co-Pilot provide when generating responses to your questions?",
-          options: [
-            "Only text-based responses",
-            "Suggested prompts and images",
-            "Video editing capabilities",
-            "Data export in PDF format",
-          ],
-          answer: 1,
-        },
-        {
-          question: "What customization options are available in Google Co-Pilot’s settings?",
-          options: [
-            "Voice-to-text settings",
-            "Theme appearance and privacy settings",
-            "Video resolution settings",
-            "Chatbot language preferences",
-          ],
-          answer: 1,
-        },
-        {
-          question: "How can you access Google Co-Pilot on the go?",
-          options: [
-            "By using a mobile app available in app stores",
-            "By downloading an external plugin",
-            "By using the desktop version only",
-            "Through direct email access",
-          ],
-          answer: 0,
-        },
-      ],      
+    copilot: [
+      {
+        question: "What does Microsoft CoPilot help with?",
+        options: [
+          "Document summarization and task automation",
+          "Voice-to-text transcription",
+          "Video editing",
+          "Data visualization",
+        ],
+        answer: 0,
+      },
+    ],
     googleNotebook: [
       {
         question: "What do you need to give NotebookLM in order for it to help you?",
@@ -226,39 +187,12 @@ const quizData = {
   
 
 export default function AiTrainerGamePage() {
-  const [selectedModel, setSelectedModel] = useState(null); // Store the selected model
+  const [selectedModel, setSelectedModel] = useState(null);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [hasAnswered, setHasAnswered] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
-
-  const modelQuestions = selectedModel ? quizData[selectedModel] : [];
-  const currentQuestion = modelQuestions.length > 0 ? modelQuestions[currentQuestionIndex] : null;
-
-  // Function to handle the answer submission
-  const handleAnswerSubmit = () => {
-    if (selectedOption === null) return;
-
-    if (selectedOption === currentQuestion?.answer) {
-      setScore(score + 1);
-    }
-
-    setHasAnswered(true);
-  };
-
-  // Function to go to the next question
-  const handleNextQuestion = () => {
-    setSelectedOption(null);
-    setHasAnswered(false);
-    if (currentQuestionIndex + 1 < modelQuestions.length) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
-    } else {
-      alert(`Quiz completed! Your score: ${score}/${modelQuestions.length}`);
-      setSelectedModel(null); // Reset the model selection after quiz is completed
-      setCurrentQuestionIndex(0); // Reset quiz state
-      setScore(0); // Reset score
-    }
-  };
+  const [showCorrectAnswer, setShowCorrectAnswer] = useState(false);
 
   // Function to start the quiz for a selected model
   const startQuiz = (model) => {
@@ -266,6 +200,70 @@ export default function AiTrainerGamePage() {
     setCurrentQuestionIndex(0);
     setScore(0);
     setHasAnswered(false);
+    setShowCorrectAnswer(false);
+  };
+
+  // Get the current question based on the selected model and index
+  const getCurrentQuestion = () => {
+    if (selectedModel && quizData[selectedModel]) {
+      return quizData[selectedModel][currentQuestionIndex];
+    }
+    return null;
+  };
+
+  const currentQuestion = getCurrentQuestion();
+
+  // Function to handle the answer submission
+  const handleAnswerSubmit = () => {
+    if (selectedOption === null) return;
+
+    const isCorrect = selectedOption === currentQuestion.answer;
+    if (isCorrect) {
+      setScore(score + 1);
+    } else {
+      setShowCorrectAnswer(true);
+    }
+    
+    setHasAnswered(true);
+  };
+
+  // Function to go to the next question
+  const handleNextQuestion = () => {
+    setSelectedOption(null);
+    setHasAnswered(false);
+    if (currentQuestionIndex + 1 < quizData[selectedModel].length) {
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
+    } else {
+      alert(`Quiz completed! Your score: ${score}/${quizData[selectedModel].length}`);
+      setSelectedModel(null); // Reset the model selection after quiz is completed
+      setCurrentQuestionIndex(0); // Reset quiz state
+      setScore(0); // Reset score
+    }
+  };
+
+  const getQuizTitle = () => {
+    switch(selectedModel) {
+      case 'googleNotebook':
+        return (
+          <>
+            <span className="text-blue-500">G</span>
+            <span className="text-red-500">o</span>
+            <span className="text-yellow-500">o</span>
+            <span className="text-blue-500">g</span>
+            <span className="text-green-500">l</span>
+            <span className="text-red-500">e</span>
+            {' '}<span className="text-gray-300">NotebookLM</span> quiz!
+          </>
+        );
+      case 'chatgpt':
+        return "ChatGPT Quiz";
+      case 'googleGemini':
+        return "Google Gemini Quiz";
+      case 'copilot':
+        return "Microsoft CoPilot Quiz";
+      default:
+        return "Lesson Quizzes";
+    }
   };
 
   return (
@@ -278,10 +276,12 @@ export default function AiTrainerGamePage() {
         transition={{ duration: 0.6, ease: "easeInOut" }}
         className="min-h-screen bg-gradient-to-br from-gray-800 to-gray-900 text-white flex flex-col items-center py-20"
       >
-        <h1 className="text-5xl font-bold mb-10">AI Trainer Quiz</h1>
+        <h1 className="text-5xl font-bold mb-10">
+          {getQuizTitle()}
+        </h1>
 
         {!selectedModel ? (
-          // Display model selection if no model is chosen yet
+          // Model selection UI
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-12 mt-8">
             {/* Google NotebookLM */}
             <motion.div
@@ -339,7 +339,7 @@ export default function AiTrainerGamePage() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="cursor-pointer"
-              onClick={() => startQuiz('copilotQuiz')}
+              onClick={() => startQuiz('copilot')}
             >
               <Image
                 src="/images/copilot.jpg"
@@ -351,53 +351,69 @@ export default function AiTrainerGamePage() {
               <p className="text-center mt-4 text-lg">Microsoft CoPilot</p>
             </motion.div>
           </div>
-        ) : (
-          // Display quiz questions after a model is selected
+        ) : currentQuestion ? (
+          // Quiz question UI
           <div className="bg-gray-700 p-8 rounded-lg shadow-lg max-w-xl w-full">
-            {currentQuestion ? (
+            <h2 className="text-2xl mb-6">{currentQuestion.question}</h2>
+            <div className="space-y-4">
+              {currentQuestion.options.map((option, index) => {
+                let backgroundColor = "bg-gray-600";
+                if (!hasAnswered && selectedOption === index) {
+                  backgroundColor = "bg-blue-500";
+                } else if (hasAnswered) {
+                  if (index === currentQuestion.answer) {
+                    backgroundColor = "bg-green-500";
+                  } else if (selectedOption === index) {
+                    backgroundColor = "bg-red-500";
+                  }
+                }
+
+                return (
+                  <motion.button
+                    key={index}
+                    whileHover={{ scale: 1.05 }}
+                    onClick={() => !hasAnswered && setSelectedOption(index)}
+                    className={`block w-full py-3 px-4 rounded-md text-left 
+                    ${backgroundColor} hover:bg-blue-700 transition-colors`}
+                    disabled={hasAnswered}
+                  >
+                    {option}
+                  </motion.button>
+                );
+              })}
+            </div>
+            {hasAnswered ? (
               <>
-                <h2 className="text-2xl mb-6">{currentQuestion.question}</h2>
-
-                <div className="space-y-4">
-                  {currentQuestion.options.map((option, index) => (
-                    <motion.button
-                      key={index}
-                      whileHover={{ scale: 1.05 }}
-                      onClick={() => setSelectedOption(index)}
-                      className={`block w-full py-3 px-4 rounded-md text-left 
-                      ${selectedOption === index ? "bg-blue-500" : "bg-gray-600"} 
-                      hover:bg-blue-700 transition-colors`}
-                    >
-                      {option}
-                    </motion.button>
-                  ))}
-                </div>
-
-                {hasAnswered ? (
-                  <button
-                    onClick={handleNextQuestion}
-                    className="mt-6 w-full py-3 bg-green-500 hover:bg-green-600 text-white rounded-lg"
-                  >
-                    Next Question
-                  </button>
-                ) : (
-                  <button
-                    onClick={handleAnswerSubmit}
-                    className="mt-6 w-full py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg"
-                  >
-                    Submit Answer
-                  </button>
+                {showCorrectAnswer && (
+                  <div className="mt-4 text-green-400">
+                    Correct answer: {currentQuestion.options[currentQuestion.answer]}
+                  </div>
                 )}
-
-                <div className="mt-4">
-                  <p className="text-sm">
-                    Score: {score}/{modelQuestions.length}
-                  </p>
-                </div>
+                <button
+                  onClick={handleNextQuestion}
+                  className="mt-6 w-full py-3 bg-green-500 hover:bg-green-600 text-white rounded-lg"
+                >
+                  Next Question
+                </button>
               </>
             ) : (
-              <p>No questions available for this model.</p>
+              <button
+                onClick={handleAnswerSubmit}
+                className="mt-6 w-full py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg"
+              >
+                Submit Answer
+              </button>
             )}
+            <div className="mt-4">
+              <p className="text-sm">
+                Score: {score}/{quizData[selectedModel].length}
+              </p>
+            </div>
+          </div>
+        ) : (
+          // Loading or error state
+          <div className="text-center">
+            <p>Loading question...</p>
           </div>
         )}
       </motion.div>
