@@ -75,14 +75,54 @@ const quizData = {
     ],
     googleNotebook: [
       {
-        question: "What is Google NotebookLM primarily used for?",
+        question: "What is the primary purpose of Google NotebookLM?",
         options: [
-          "Collaborative document editing",
-          "Advanced note-taking with AI integration",
-          "Generating music with AI",
-          "Image editing",
+          "To create digital notebooks",
+          "To help you study and learn faster based on uploaded material",
+          "To generate random text",
+          "To edit PDF documents",
         ],
         answer: 1,
+      },
+      {
+        question: "What type of source can you upload to NotebookLM?",
+        options: [
+          "Only PDF files",
+          "Only website links",
+          "Various sources including PDFs and website links",
+          "Only text documents",
+        ],
+        answer: 2,
+      },
+      {
+        question: "What does it mean when an AI model is 'trained' on certain data in the context of NotebookLM?",
+        options: [
+          "The model has memorized the exact text of the data",
+          "The model has analyzed and learned patterns from the data",
+          "The model can only repeat the data verbatim",
+          "The model has general knowledge about all topics",
+        ],
+        answer: 1,
+      },
+      {
+        question: "How does context work in NotebookLM interactions?",
+        options: [
+          "The AI forgets all previous interactions immediately",
+          "The AI remembers all interactions forever",
+          "The AI remembers previous questions and answers in the current session",
+          "The AI only remembers the last question asked",
+        ],
+        answer: 2,
+      },
+      {
+        question: "Which of the following is NOT mentioned as a creative way to use NotebookLM?",
+        options: [
+          "Summarizing complex concepts",
+          "Generating examples",
+          "Creating artwork",
+          "Creating study questions",
+        ],
+        answer: 2,
       },
     ],
     googleGemini: [  
