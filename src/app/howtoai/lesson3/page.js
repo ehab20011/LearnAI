@@ -23,7 +23,7 @@ export default function Lesson3Page() {
               <li>How to integrate Google Gemini with other tools</li>
             </ul>
             <p className="mt-2">
-              By the end of this lesson, you'll be able to confidently utilize Google Gemini to enhance your AI and machine learning workflows.
+              By the end of this lesson, you&apos;ll be able to confidently utilize Google Gemini to enhance your AI and machine learning workflows.
             </p>
           </section>
     
