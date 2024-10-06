@@ -199,7 +199,7 @@ export default function Lesson1Page() {
             <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 my-8">
               <div className="w-full lg:w-1/2">
                 <Image
-                  src="/images/trained-notebook.png"
+                  src="/images/notebook-created.png"
                   alt="NotebookLM Interface"
                   width={600}
                   height={338}
