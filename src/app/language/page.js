@@ -7,24 +7,28 @@ import Footer from '../../components/Footer';
 export default function LanguagePage() {
   const [isTranslateInitialized, setIsTranslateInitialized] = useState(false);
 
-  // Dynamically load Google Translate script and initialize it
+  // Dynamically load Google Translate script and initialize it with a delay
   useEffect(() => {
-    if (!isTranslateInitialized) {
-      const addScript = document.createElement("script");
-      addScript.setAttribute("src", "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit");
-      document.body.appendChild(addScript);
+    const timer = setTimeout(() => {
+      if (!isTranslateInitialized) {
+        const addScript = document.createElement("script");
+        addScript.setAttribute("src", "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit");
+        document.body.appendChild(addScript);
 
-      // Initialize Google Translate with limited languages
-      window.googleTranslateElementInit = () => {
-        new window.google.translate.TranslateElement({
-          pageLanguage: 'en', // Set default language to English
-          includedLanguages: 'en,es,fr,de,it,pt,zh-CN,ja,ko,ar,ru', // Limit to specific languages
-          layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
-        }, 'google_translate_element');
-      };
+        // Initialize Google Translate with limited languages
+        window.googleTranslateElementInit = () => {
+          new window.google.translate.TranslateElement({
+            pageLanguage: 'en', // Set default language to English
+            includedLanguages: 'en,es,fr,de,it,pt,zh-CN,ja,ko,ar,ru', // Limit to specific languages
+            layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
+          }, 'google_translate_element');
+          setIsTranslateInitialized(true); // Set it as initialized to prevent reloading
+        };
+      }
+    }, 5000); // 2 seconds delay (you can adjust this duration)
 
-      setIsTranslateInitialized(true); // Set it as initialized to prevent reloading
-    }
+    // Clean up function to clear the timer if the component unmounts
+    return () => clearTimeout(timer);
   }, [isTranslateInitialized]);
 
   // Page animation variants

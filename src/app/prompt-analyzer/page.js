@@ -42,7 +42,7 @@ export default function PromptAnalyzer() {
             content: `Analyze the following prompt for clarity, specificity, context, and length. Provide numerical ratings from 1 to 10 for each category and suggest a concise improvement:\n\nPrompt: "${prompt}"`,
           },
         ],
-        max_tokens: 150,
+        max_tokens: 200,
       },
       {
         headers: {
@@ -73,7 +73,9 @@ export default function PromptAnalyzer() {
     //const improvedPrompt = improvementMatch ? improvementMatch[1].trim() : "No improvement suggested.";
 
     const improvedPrompt = lines[lines.length - 1].trim() || "No improvement suggested.";
-
+    //const improvedPrompt = lines[lines.length - 1].trim();
+    const trimmedPrompt = improvedPrompt.split(":").slice(1).join(":").trim();
+    console.log(trimmedPrompt);
 
     //console.log(improvementMatch);
     console.log("xyz");
@@ -84,7 +86,7 @@ export default function PromptAnalyzer() {
     return {
       categories,
       originalPrompt: prompt,
-      improvedPrompt: improvedPrompt,
+      improvedPrompt: trimmedPrompt,
     };
   };
 

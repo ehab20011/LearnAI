@@ -6,7 +6,6 @@ import Footer from "../../components/Footer";
 import Image from 'next/image';
 
 // Sample quiz data grouped by models
-// Sample quiz data grouped by models
 const quizData = {
     chatgpt: [
         {
@@ -61,18 +60,58 @@ const quizData = {
         },
       ],
       
-    copilot: [
-      {
-        question: "What does Microsoft CoPilot help with?",
-        options: [
-          "Document summarization and task automation",
-          "Voice-to-text transcription",
-          "Video editing",
-          "Data visualization",
-        ],
-        answer: 0,
-      },
-    ],
+      copilotQuiz: [
+        {
+          question: "What is one of the core capabilities of Google Co-Pilot?",
+          options: [
+            "Automating tasks",
+            "Video editing",
+            "Voice transcription",
+            "Image creation",
+          ],
+          answer: 0,
+        },
+        {
+          question: "Which of the following steps is necessary to begin using Google Co-Pilot?",
+          options: [
+            "Download the desktop app",
+            "Sign in with your Google account",
+            "Set up a payment plan",
+            "Install browser extensions",
+          ],
+          answer: 1,
+        },
+        {
+          question: "What feature does Google Co-Pilot provide when generating responses to your questions?",
+          options: [
+            "Only text-based responses",
+            "Suggested prompts and images",
+            "Video editing capabilities",
+            "Data export in PDF format",
+          ],
+          answer: 1,
+        },
+        {
+          question: "What customization options are available in Google Co-Pilot’s settings?",
+          options: [
+            "Voice-to-text settings",
+            "Theme appearance and privacy settings",
+            "Video resolution settings",
+            "Chatbot language preferences",
+          ],
+          answer: 1,
+        },
+        {
+          question: "How can you access Google Co-Pilot on the go?",
+          options: [
+            "By using a mobile app available in app stores",
+            "By downloading an external plugin",
+            "By using the desktop version only",
+            "Through direct email access",
+          ],
+          answer: 0,
+        },
+      ],      
     googleNotebook: [
       {
         question: "What do you need to give NotebookLM in order for it to help you?",
@@ -194,16 +233,16 @@ export default function AiTrainerGamePage() {
   const [selectedOption, setSelectedOption] = useState(null);
 
   const modelQuestions = selectedModel ? quizData[selectedModel] : [];
-  const currentQuestion = modelQuestions[currentQuestionIndex];
+  const currentQuestion = modelQuestions.length > 0 ? modelQuestions[currentQuestionIndex] : null;
 
   // Function to handle the answer submission
   const handleAnswerSubmit = () => {
     if (selectedOption === null) return;
 
-    if (selectedOption === currentQuestion.answer) {
+    if (selectedOption === currentQuestion?.answer) {
       setScore(score + 1);
     }
-    
+
     setHasAnswered(true);
   };
 
@@ -232,132 +271,137 @@ export default function AiTrainerGamePage() {
   return (
     <>
       <Header />
-      {/* Model Selection Logos */}  
-<motion.div
-  initial={{ opacity: 0 }}
-  animate={{ opacity: 1 }}
-  exit={{ opacity: 0 }}
-  transition={{ duration: 0.6, ease: "easeInOut" }}
-  className="min-h-screen bg-gradient-to-br from-gray-800 to-gray-900 text-white flex flex-col items-center py-20"
->
-  <h1 className="text-5xl font-bold mb-10">AI Trainer Quiz</h1>
-
-  {!selectedModel ? (
-    // Display model selection if no model is chosen yet
-    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-12 mt-8">
-      {/* Google NotebookLM */}
       <motion.div
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        className="cursor-pointer"
-        onClick={() => startQuiz('googleNotebook')}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.6, ease: "easeInOut" }}
+        className="min-h-screen bg-gradient-to-br from-gray-800 to-gray-900 text-white flex flex-col items-center py-20"
       >
-        <Image
-          src="/images/google-notebook.png"
-          alt="Google NotebookLM"
-          width={150}
-          height={150}
-          className="rounded-full mx-auto"
-        />
-        <p className="text-center mt-4 text-lg">Google NotebookLM</p>
+        <h1 className="text-5xl font-bold mb-10">AI Trainer Quiz</h1>
+
+        {!selectedModel ? (
+          // Display model selection if no model is chosen yet
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-12 mt-8">
+            {/* Google NotebookLM */}
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="cursor-pointer"
+              onClick={() => startQuiz('googleNotebook')}
+            >
+              <Image
+                src="/images/google-notebook.png"
+                alt="Google NotebookLM"
+                width={150}
+                height={150}
+                className="rounded-full mx-auto"
+              />
+              <p className="text-center mt-4 text-lg">Google NotebookLM</p>
+            </motion.div>
+
+            {/* ChatGPT */}
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="cursor-pointer"
+              onClick={() => startQuiz('chatgpt')}
+            >
+              <Image
+                src="/images/chatgpt.png"
+                alt="ChatGPT"
+                width={150}
+                height={150}
+                className="rounded-full mx-auto"
+              />
+              <p className="text-center mt-4 text-lg">ChatGPT</p>
+            </motion.div>
+
+            {/* Google Gemini */}
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="cursor-pointer"
+              onClick={() => startQuiz('googleGemini')}
+            >
+              <Image
+                src="/images/gemini.png"
+                alt="Google Gemini"
+                width={150}
+                height={150}
+                className="rounded-full mx-auto"
+              />
+              <p className="text-center mt-4 text-lg">Google Gemini</p>
+            </motion.div>
+
+            {/* Microsoft CoPilot */}
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="cursor-pointer"
+              onClick={() => startQuiz('copilotQuiz')}
+            >
+              <Image
+                src="/images/copilot.jpg"
+                alt="Microsoft CoPilot"
+                width={150}
+                height={150}
+                className="rounded-full mx-auto"
+              />
+              <p className="text-center mt-4 text-lg">Microsoft CoPilot</p>
+            </motion.div>
+          </div>
+        ) : (
+          // Display quiz questions after a model is selected
+          <div className="bg-gray-700 p-8 rounded-lg shadow-lg max-w-xl w-full">
+            {currentQuestion ? (
+              <>
+                <h2 className="text-2xl mb-6">{currentQuestion.question}</h2>
+
+                <div className="space-y-4">
+                  {currentQuestion.options.map((option, index) => (
+                    <motion.button
+                      key={index}
+                      whileHover={{ scale: 1.05 }}
+                      onClick={() => setSelectedOption(index)}
+                      className={`block w-full py-3 px-4 rounded-md text-left 
+                      ${selectedOption === index ? "bg-blue-500" : "bg-gray-600"} 
+                      hover:bg-blue-700 transition-colors`}
+                    >
+                      {option}
+                    </motion.button>
+                  ))}
+                </div>
+
+                {hasAnswered ? (
+                  <button
+                    onClick={handleNextQuestion}
+                    className="mt-6 w-full py-3 bg-green-500 hover:bg-green-600 text-white rounded-lg"
+                  >
+                    Next Question
+                  </button>
+                ) : (
+                  <button
+                    onClick={handleAnswerSubmit}
+                    className="mt-6 w-full py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg"
+                  >
+                    Submit Answer
+                  </button>
+                )}
+
+                <div className="mt-4">
+                  <p className="text-sm">
+                    Score: {score}/{modelQuestions.length}
+                  </p>
+                </div>
+              </>
+            ) : (
+              <p>No questions available for this model.</p>
+            )}
+          </div>
+        )}
       </motion.div>
-
-      {/* ChatGPT */}
-      <motion.div
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        className="cursor-pointer"
-        onClick={() => startQuiz('chatgpt')}
-      >
-        <Image
-          src="/images/chatgpt.png"
-          alt="ChatGPT"
-          width={150}
-          height={150}
-          className="rounded-full mx-auto"
-        />
-        <p className="text-center mt-4 text-lg">ChatGPT</p>
-      </motion.div>
-
-      {/* Google Gemini */}
-      <motion.div
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        className="cursor-pointer"
-        onClick={() => startQuiz('googleGemini')}
-      >
-        <Image
-          src="/images/gemini.png"
-          alt="Google Gemini"
-          width={150}
-          height={150}
-          className="rounded-full mx-auto"
-        />
-        <p className="text-center mt-4 text-lg">Google Gemini</p>
-      </motion.div>
-
-      {/* Microsoft CoPilot */}
-      <motion.div
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        className="cursor-pointer"
-        onClick={() => startQuiz('copilot')}
-      >
-        <Image
-          src="/images/copilot.jpg"
-          alt="Microsoft CoPilot"
-          width={150}
-          height={150}
-          className="rounded-full mx-auto"
-        />
-        <p className="text-center mt-4 text-lg">Microsoft CoPilot</p>
-      </motion.div>
-    </div>
-  ) : (
-    // Display quiz questions after a model is selected
-    <div className="bg-gray-700 p-8 rounded-lg shadow-lg max-w-xl w-full">
-      <h2 className="text-2xl mb-6">{currentQuestion.question}</h2>
-
-      <div className="space-y-4">
-        {currentQuestion.options.map((option, index) => (
-          <motion.button
-            key={index}
-            whileHover={{ scale: 1.05 }}
-            onClick={() => setSelectedOption(index)}
-            className={`block w-full py-3 px-4 rounded-md text-left 
-            ${selectedOption === index ? "bg-blue-500" : "bg-gray-600"} 
-            hover:bg-blue-700 transition-colors`}
-          >
-            {option}
-          </motion.button>
-        ))}
-      </div>
-
-      {hasAnswered ? (
-        <button
-          onClick={handleNextQuestion}
-          className="mt-6 w-full py-3 bg-green-500 hover:bg-green-600 text-white rounded-lg"
-        >
-          Next Question
-        </button>
-      ) : (
-        <button
-          onClick={handleAnswerSubmit}
-          className="mt-6 w-full py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg"
-        >
-          Submit Answer
-        </button>
-      )}
-
-      <div className="mt-4">
-        <p className="text-sm">
-          Score: {score}/{modelQuestions.length}
-        </p>
-      </div>
-    </div>
-  )}
-</motion.div>
-      <Footer />    
+      <Footer />
     </>
   );
 }
