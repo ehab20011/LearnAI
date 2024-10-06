@@ -18,35 +18,47 @@ export default function HowToAIPage() {
     lessons: []
   });
 
-  // Fetch the currently logged-in user's UID and then fetch user data from Firestore by matching the userUID field
   useEffect(() => {
     const fetchUserData = async () => {
       const auth = getAuth();
       const user = auth.currentUser;
-
+  
       if (user) {
         const userUID = user.uid;  // Get the logged-in user's UID
         console.log("Current logged-in user's UID:", userUID);  // Log the current user's UID
-
-             // Logging to check the collection being queried
-             console.log("Querying 'userInfoDatabase' collection with userUID:", userUID);
-
-
+  
+        // Logging to check the collection being queried
+        console.log("Querying 'userInfoDatabase' collection with userUID:", userUID);
+  
         // Query Firestore to match the userUID field in the correct userInfoDatabase collection
         const q = query(collection(db, "userInfoDatabase"), where("userUID", "==", userUID)); // Ensure you are querying the correct collection
         const querySnapshot = await getDocs(q);
-
+  
         if (!querySnapshot.empty) {
           querySnapshot.forEach((doc) => {
             const userData = doc.data();
+            
+            // Debugging: Log the user data to verify the experience fields
+            console.log("Retrieved user data:", userData);
+            
+            // Check the experience values to ensure they are correct
+            console.log("gpt_exp:", userData.gpt_exp);
+            console.log("gemini_exp:", userData.gemini_exp);
+            console.log("notebook_lm_exp:", userData.notebook_lm_exp);
+            console.log("copilot_exp:", userData.copilot_exp);
+  
+            // Define the maximum experience for each lesson (assuming 4 is the max)
+            const maxExp = 4;
+  
+            // Update state with user progress, calculate percentage for each lesson
             setUserProgress({
               firstName: userData.firstName,
               lastName: userData.lastName,
               lessons: [
-                { name: "ChatGPT", progress: userData.gpt_exp },
-                { name: "Gemini", progress: userData.gemini_exp },
-                { name: "Google NotebookLM", progress: userData.notebook_lm_exp },
-                { name: "Microsoft CoPilot", progress: userData.copilot_exp }
+                { name: "ChatGPT", progress: Math.min((userData.gpt_exp / maxExp) * 100, 100) }, // Ensure correct calculation
+                { name: "Gemini", progress: Math.min((userData.gemini_exp / maxExp) * 100, 100) },
+                { name: "Google NotebookLM", progress: Math.min((userData.notebook_lm_exp / maxExp) * 100, 100) },
+                { name: "Microsoft CoPilot", progress: Math.min((userData.copilot_exp / maxExp) * 100, 100) }
               ]
             });
           });
@@ -57,7 +69,7 @@ export default function HowToAIPage() {
         console.log("No user is logged in!");
       }
     };
-
+  
     fetchUserData();
   }, []);
 
