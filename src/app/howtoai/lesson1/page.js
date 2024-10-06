@@ -261,9 +261,31 @@ export default function Lesson1Page() {
             Step 3: Interacting with your NotebookLM
           </h2>
 
-          <p className="mb-4 text-lg">
-            Now that you&apos;ve uploaded your source (Harvard&apos;s AI Prompts Guide and trained your notebookLM, let&apos;s explore how to interact with it effectively.
-          </p>
+            <p className="mb-4 text-lg">
+              Now that you&apos;ve uploaded your source (Harvard&apos;s AI Prompts Guide and trained your notebookLM, let&apos;s explore how to interact with it effectively.
+            </p>
+
+            <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 my-8">
+              <div className="w-full lg:w-1/2">
+                <Image
+                  src="/images/notebook-created.png"
+                  alt="NotebookLM Interface"
+                  width={600}
+                  height={338}
+                  layout="responsive"
+                  className="rounded-lg shadow-md"
+                />
+              </div>
+              <div className="w-full lg:w-1/2">
+                <h3 className="text-xl font-semibold mb-4">Prompting your trained NotebookLM</h3>
+                <ol className="list-decimal list-inside space-y-2 text-lg">
+                  <li>Now you can type your question/prompt in the input box at the bottom of the screen and press enter to get a response.</li>
+                  <li>Try asking your notebook <strong>&quot;What makes a good prompt?&quot;</strong></li>
+                  <li>You may get a long, confusing response, and that&apos;s ok! You can add context to change the response your notebook gives you </li>
+                  <li>You will see some suggested prompts from notebookLM under your answer, and you can use those if you like.</li>
+                </ol>
+              </div>
+            </div>
 
           <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 my-8">
             <div className="w-full lg:w-1/2">
