@@ -8,10 +8,9 @@ export default function HomePage() {
   const [isClient, setIsClient] = useState(false); // To track if the client has mounted
 
   const textList = [
-    "Welcome to HowToAI", 
-    "How do I properly prompt a Large Language Model?", 
-    "How much context does a prompt need?",
-    ""
+    " Welcome to HowToAI", 
+    " How do I properly prompt a Large Language Model?", 
+    " How much context does a prompt need?",
   ]; 
 
   const typingSpeed = 75;
