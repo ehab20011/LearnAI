@@ -10,7 +10,7 @@ export default function Lesson1Page() {
         <>
         <Header />
         <div className="max-w-4xl mx-auto p-6">
-          <h1 className="text-3xl font-bold mb-6">Lesson 1: Using Google's Notebook LM</h1>
+          <h1 className="text-3xl font-bold mb-6">Lesson 1: Using Google&apos;s Notebook LM</h1>
           
           <section className="mb-8 bg-blue-50 p-4 rounded-lg border border-blue-200 text-gray-800">
             <h2 className="text-xl font-semibold mb-2 text-gray-900">Lesson Overview</h2>
@@ -18,14 +18,14 @@ export default function Lesson1Page() {
               In this lesson, you will learn:
             </p>
             <ul className="list-disc list-inside mt-2 space-y-1">
-              <li>What Google's Notebook LM is and its capabilities</li>
+              <li>What Google&apos;s Notebook LM is and its capabilities</li>
               <li>How to access and set up Notebook LM</li>
               <li>Basic steps to create and run prompts</li>
               <li>Tips for effective use of the language model</li>
               <li>How to interpret and iterate on results</li>
             </ul>
             <p className="mt-2">
-              By the end of this lesson, you'll be able to start your own projects using Notebook LM and understand its potential for various applications.
+              By the end of this lesson, you&apos;ll be able to start your own projects using Notebook LM and understand its potential for various applications.
             </p>
           </section>
     
@@ -36,7 +36,7 @@ export default function Lesson1Page() {
                 Step 1: Getting Started with Google NotebookLM
             </h2>
             <p className="mb-4">
-              Let's get up and running with Google NotebookLM! This tool can help you study and learn much faster and even answer questions you may have based on the material you upload to it. <strong>We'll dive deeper in this lesson as to what I mean by that.</strong>
+              Let&apos;s get up and running with Google NotebookLM! This tool can help you study and learn much faster and even answer questions you may have based on the material you upload to it. <strong>We&apos;ll dive deeper in this lesson as to what I mean by that.</strong>
             </p>
             <p className="mb-4">
               To get started, you will need a Google account (Gmail) and go to{' '}
@@ -68,7 +68,7 @@ export default function Lesson1Page() {
                 </p>
                 <p className="mt-4">
                   <br />
-                  Go ahead and click on <strong>"Try NotebookLM"</strong>
+                  Go ahead and click on <strong>&quot;Try NotebookLM&quot;</strong>
                 </p>
               </div>
             </div>
@@ -94,19 +94,19 @@ export default function Lesson1Page() {
               <h3 className="text-xl font-semibold mb-4 mt-2">The Notebooks Dashboard</h3>
 
                 <p>
-                    Once you're logged in, you'll see the notebooks dashboard. From this dashboard, you can:
+                    Once you&apos;re logged in, you&apos;ll see the notebooks dashboard. From this dashboard, you can:
                 </p>
                 <p className="mt-4">
                   
                 </p>
                 <ul className="list-disc list-inside mt-2 space-y-1">
-                  <li>Create a new notebook by clicking the "New notebook" button</li>
+                  <li>Create a new notebook by clicking the &quot;New notebook&quot; button</li>
                   <li>Access your existing notebooks</li>
                 </ul>
 
 
                 <br />
-                <strong>Let's make a new notebook, click on "Create"</strong>
+                <strong>Let&apos;s make a new notebook, click on &quot;Create&quot;</strong>
               </div>
             </div>
           </section>
@@ -121,7 +121,7 @@ export default function Lesson1Page() {
         <p className="mb-4 text-lg">
           In order to work with NotebookLM you must upload sources.
           Thankfully we can upload different kinds of sources, not just PDFs.
-          For this lesson we will upload a website link to Harvard's guide for prompting text-generative based models such as Google NotebookLM:
+          For this lesson we will upload a website link to Harvard&apos;s guide for prompting text-generative based models such as Google NotebookLM:
         </p>
 
         {/* New subsection: What is a prompt? */}
@@ -157,20 +157,20 @@ export default function Lesson1Page() {
               rel="noopener noreferrer"
               className="text-blue-600 hover:text-blue-800 underline hover:no-underline font-bold"
             >
-              Harvard's AI Prompts Guide
+              Harvard&apos;s AI Prompts Guide
             </a></li>
-              <li>Under "Link" click on "website" and paste the Prompt Guide link in the search box.</li>
-              <li>After pasting the link, click on "Insert"</li>
-              <li>Hooray! You have created a new notebook that is trained on Harvards' article for getting started with prompts</li>
+              <li>Under &quot;Link&quot; click on &quot;website&quot; and paste the Prompt Guide link in the search box.</li>
+              <li>After pasting the link, click on &quot;Insert&quot;</li>
+              <li>Hooray! You have created a new notebook that is trained on Harvards&apos; article for getting started with prompts</li>
             </ol>
           </div>
         </div>
 
         {/* Step 2 subsection: What does "trained" mean in AI? */}
         <div className="bg-green-50 p-4 rounded-lg border border-green-200 my-6 max-w-3xl mx-auto">
-            <h3 className="text-xl font-semibold mb-2 text-green-800">What does "trained" mean in AI?</h3>
+            <h3 className="text-xl font-semibold mb-2 text-green-800">What does &quot;trained&quot; mean in AI?</h3>
             <p className="mb-2 text-sm text-gray-700">
-              When we say an AI model is "trained" on certain data, it means the model has analyzed and learned patterns from that data. In the context of NotebookLM:
+              When we say an AI model is &quot;trained&quot; on certain data, it means the model has analyzed and learned patterns from that data. In the context of NotebookLM:
             </p>
             <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
               <li> NotebookLM processes the documents or websites you upload.</li>
@@ -179,7 +179,7 @@ export default function Lesson1Page() {
               <li>It is important to understand where an AI model gets its data from. The Notebook you just created will only be trained on the sources you give it, and not general knowledge like other models such as GPT. This is perfect for studying and making sure the AI gives you answers that are based only on certain data</li>
             </ul>
             <p className="mt-2 text-sm text-gray-700">
-              This "training" enables NotebookLM to provide more accurate and relevant responses based on your specific documents, rather than just general knowledge.
+              This &quot;training&quot; enables NotebookLM to provide more accurate and relevant responses based on your specific documents, rather than just general knowledge.
             </p>
           </div>
           </section>
@@ -193,7 +193,7 @@ export default function Lesson1Page() {
             </h2>
 
             <p className="mb-4 text-lg">
-              Now that you've uploaded your source (Harvard's AI Prompts Guide and trained your notebookLM, let's explore how to interact with it effectively.
+              Now that you&apos;ve uploaded your source (Harvard&apos;s AI Prompts Guide and trained your notebookLM, let&apos;s explore how to interact with it effectively.
             </p>
 
             <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 my-8">
@@ -211,26 +211,26 @@ export default function Lesson1Page() {
                 <h3 className="text-xl font-semibold mb-4">Prompting your trained NotebookLM</h3>
                 <ol className="list-decimal list-inside space-y-2 text-lg">
                   <li>Now you can type your question/prompt in the input box at the bottom of the screen and press enter to get a response.</li>
-                  <li>Try asking your notebook <strong>"What makes a good prompt?"</strong></li>
-                  <li>You may get a long, confusing response, and that's ok! You can add context to change the response your notebook gives you </li>
+                  <li>Try asking your notebook <strong>&quot;What makes a good prompt?&quot;</strong></li>
+                  <li>You may get a long, confusing response, and that&apos;s ok! You can add context to change the response your notebook gives you </li>
                   <li>You will see some suggested prompts from notebookLM under your answer, and you can use those if you like.</li>
                 </ol>
               </div>
             </div>
 
             <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-200 my-6">
-              <h3 className="text-xl font-semibold mb-2 text-yellow-800">Copy and paste these example prompts to see NotebookLM's potential</h3>
+              <h3 className="text-xl font-semibold mb-2 text-yellow-800">Copy and paste these example prompts to see NotebookLM&apos;s potential</h3>
               <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
-                <li>"What makes a good prompt? Explain it to me as if I have never used an AI tool before."</li>
-                <li>"What are some kind of details I should include in my prompts to get better answers?" </li>
-                <li>"Give me a summary of the Harvard Prompt data source, I want to explain prompts to my little sister"</li>
+                <li>&quot;What makes a good prompt? Explain it to me as if I have never used an AI tool before.&quot;</li>
+                <li>&quot;What are some kind of details I should include in my prompts to get better answers?&quot; </li>
+                <li>&quot;Give me a summary of the Harvard Prompt data source, I want to explain prompts to my little sister&quot;</li>
               </ul>
             </div>
 
             <div className="bg-purple-50 p-4 rounded-lg border border-purple-200 my-6">
               <h3 className="text-xl font-semibold mb-2 text-purple-800">Understanding Context in AI Interactions</h3>
               <p className="mb-2 text-sm text-gray-700">
-                Context is crucial in AI interactions, especially with tools like NotebookLM. Here's what you need to know:
+                Context is crucial in AI interactions, especially with tools like NotebookLM. Here&apos;s what you need to know:
               </p>
               <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
                 <li>Once you train and start prompting your notebookLM, it remembers the data sources you gave it, and any previous prompts you have entered in that chat thread </li>
@@ -246,7 +246,7 @@ export default function Lesson1Page() {
 
 
             <p className="mt-4 text-lg">
-              Practice interacting with NotebookLM using the Harvard AI Prompts Guide as your source. Try asking questions about effective prompting techniques or experiment with crafting your own prompts based on the guide's recommendations.
+              Practice interacting with NotebookLM using the Harvard AI Prompts Guide as your source. Try asking questions about effective prompting techniques or experiment with crafting your own prompts based on the guide&apos;s recommendations.
             </p>
             </section>
 
@@ -257,7 +257,7 @@ export default function Lesson1Page() {
             </h2>
 
             <p className="mb-4 text-lg">
-              Now that you're familiar with NotebookLM, it's time to unleash your creativity! This step is all about exploring the tool's capabilities and pushing the boundaries of what you can do with AI-assisted learning and research.
+              Now that you&apos;re familiar with NotebookLM, it&apos;s time to unleash your creativity! This step is all about exploring the tool&apos;s capabilities and pushing the boundaries of what you can do with AI-assisted learning and research.
             </p>
 
             <div className="bg-pink-50 p-4 rounded-lg border border-pink-200 my-6">
@@ -287,10 +287,10 @@ export default function Lesson1Page() {
               <div className="w-full lg:w-1/2">
                 <h3 className="text-xl font-semibold mb-4">Pushing the Boundaries</h3>
                 <p className="text-lg mb-4">
-                  Don't be afraid to experiment with different types of prompts and questions as well as Data. The more you interact with NotebookLM, the better you'll understand its capabilities and limitations.
+                  Don&apos;t be afraid to experiment with different types of prompts and questions as well as Data. The more you interact with NotebookLM, the better you&apos;ll understand its capabilities and limitations.
                 </p>
                 <p className="text-lg">
-                  Remember, the AI's responses are based on your uploaded source, so try to connect your creative prompts to the content of the Harvard AI Prompts Guide. This will help you explore both the tool's features and the guide's content in new and interesting ways.
+                  Remember, the AI&apos;s responses are based on your uploaded source, so try to connect your creative prompts to the content of the Harvard AI Prompts Guide. This will help you explore both the tool&apos;s features and the guide&apos;s content in new and interesting ways.
                 </p>
               </div>
             </div>

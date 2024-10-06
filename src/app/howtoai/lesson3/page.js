@@ -52,7 +52,7 @@ export default function Lesson3Page() {
 
               <div className="w-full md:w-1/2">
                 <p>
-                  Once you're logged in, you will see the dashboard as shown in the image. To begin, click the <strong>“Try Gemini”</strong> button on the right side of your screen to start working with Google Gemini 1.5 Pro.
+                  Once you&apos;re logged in, you will see the dashboard as shown in the image. To begin, click the <strong>“Try Gemini”</strong> button on the right side of your screen to start working with Google Gemini 1.5 Pro.
                 </p>
                 <p className="mt-4">
                   This will direct you to the Google Gemini setup page, where you can begin creating and running tasks using the AI model.
@@ -66,7 +66,7 @@ export default function Lesson3Page() {
                 Step 2: Welcome to Google Gemini
             </h2>
             <p className="mb-4">
-              After clicking "Try Gemini," you will be directed to the Gemini welcome screen, as shown below. Here, you can start interacting with Google's AI assistant for cloud-related tasks.
+              After clicking &quot;Try Gemini,&quot; you will be directed to the Gemini welcome screen, as shown below. Here, you can start interacting with Google&apos;s AI assistant for cloud-related tasks.
             </p>
             <p className="mb-4">
               The assistant is designed to help you with troubleshooting, reviewing code snippets, and answering questions about Google Cloud services.
@@ -100,7 +100,7 @@ export default function Lesson3Page() {
                 Step 3: Google Gemini Prompt Interface
             </h2>
             <p className="mb-4">
-              After clicking "Start Chatting," you will be directed to the Google Gemini prompt interface, where you can start interacting with the model. The interface allows you to write your prompts, insert media, and customize the response.
+              After clicking &quot;Start Chatting,&quot; you will be directed to the Google Gemini prompt interface, where you can start interacting with the model. The interface allows you to write your prompts, insert media, and customize the response.
             </p>
             <p className="mb-4">
               This interface gives you control over various settings like temperature, token limits, and grounding. You can choose the model version and region, providing flexibility for different use cases.
@@ -129,16 +129,16 @@ export default function Lesson3Page() {
             </div>
 
             <p className="mb-4">
-              At the bottom of the interface, you will also find example tasks like "Question answering about an image," "Extract video chapters," and "Document classification." These can help guide your interactions with Gemini.
+              At the bottom of the interface, you will also find example tasks like &quot;Question answering about an image,&quot; &quot;Extract video chapters,&quot; and &quot;Document classification.&quot; These can help guide your interactions with Gemini.
             </p>
         </section>
 
         <section className="mb-8">
             <h2 className="text-3xl font-bold mb-6 text-sky-500 border-b-2 border-sky-300 pb-2">
-                Step 4: Asking "What is Artificial Intelligence?"
+                Step 4: Asking &quot;What is Artificial Intelligence?&quot;
             </h2>
             <p className="mb-4">
-              Now that you're familiar with the Google Gemini interface, let’s try out your first prompt! In the "Prompt" box, type <strong>"What is artificial intelligence?"</strong> and click on the submit button.
+              Now that you&apos;re familiar with the Google Gemini interface, lets try out your first prompt! In the &quot;Prompt&quot; box, type <strong>&quot;What is artificial intelligence?&quot;</strong> and click on the submit button.
             </p>
             <p className="mb-4">
               After submitting the prompt, Google Gemini will generate a detailed response defining artificial intelligence, along with its types and key concepts. Here is what the response should look like:
@@ -231,7 +231,7 @@ export default function Lesson3Page() {
             <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-200 my-6 max-w-3xl mx-auto">
                 <h3 className="text-xl font-semibold mb-2 text-yellow-800">For Non-Developers</h3>
                 <p className="text-sm text-gray-700">
-                    If you're not a developer, you can <strong className="font-bold">skip this step</strong>. You don't need an API key for basic interactions with Google Gemini.
+                    If you&apos;re not a developer, you can <strong className="font-bold">skip this step</strong>. You don&apos;t need an API key for basic interactions with Google Gemini.
                 </p>
             </div>
         </section>
@@ -241,14 +241,14 @@ export default function Lesson3Page() {
                 Step 6: Explore the Possibilities with Google Gemini
             </h2>
             <p className="mb-4 text-lg">
-                Google Gemini offers a wide array of features that unlock exciting possibilities for developers, researchers, and businesses alike. Whether you're working on natural language processing, multimedia content generation, or advanced AI applications, Gemini has something for you. Let's explore some of the cool things you can do with Gemini.
+                Google Gemini offers a wide array of features that unlock exciting possibilities for developers, researchers, and businesses alike. Whether you&apos;re working on natural language processing, multimedia content generation, or advanced AI applications, Gemini has something for you. Let&apos;s explore some of the cool things you can do with Gemini.
             </p>
 
             {/* Section 1: Multimodal Capabilities */}
             <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 my-6 max-w-3xl mx-auto">
                 <h3 className="text-xl font-semibold mb-2 text-blue-800">1. Multimodal Content Generation</h3>
                 <p className="text-sm text-gray-700">
-                    Google Gemini isn't limited to just text. It can handle multimodal prompts, which means you can provide text, audio, images, and even video as input, and it will respond accordingly. This feature is perfect for:
+                    Google Gemini isn&apos;t limited to just text. It can handle multimodal prompts, which means you can provide text, audio, images, and even video as input, and it will respond accordingly. This feature is perfect for:
                 </p>
                 <ul className="list-disc list-inside mt-2 space-y-2 text-sm text-gray-700">
                     <li>Generating image captions based on image inputs</li>
@@ -275,10 +275,10 @@ export default function Lesson3Page() {
             <div className="bg-purple-50 p-4 rounded-lg border border-purple-200 my-6 max-w-3xl mx-auto">
                 <h3 className="text-xl font-semibold mb-2 text-purple-800">3. Custom Fine-Tuning for Specific Use Cases</h3>
                 <p className="text-sm text-gray-700">
-                    Google Gemini allows you to fine-tune the model based on your own datasets or business needs. This means you can create a version of Gemini that's highly specialized for tasks like:
+                    Google Gemini allows you to fine-tune the model based on your own datasets or business needs. This means you can create a version of Gemini that&apos;s highly specialized for tasks like:
                 </p>
                 <ul className="list-disc list-inside mt-2 space-y-2 text-sm text-gray-700">
-                    <li>Customer support: Train Gemini to understand and respond to your company's specific queries</li>
+                    <li>Customer support: Train Gemini to understand and respond to your company&apos;s specific queries</li>
                     <li>Healthcare: Customize Gemini for medical data interpretation or diagnosis support</li>
                     <li>Legal analysis: Tailor Gemini to process legal documents and provide recommendations</li>
                 </ul>
@@ -325,7 +325,7 @@ export default function Lesson3Page() {
             </div>
 
             <p className="mt-4 text-lg">
-                The possibilities with Google Gemini are endless. Whether you're looking to streamline your business operations, build cutting-edge AI applications, or automate complex workflows, Gemini has the tools to make it happen.
+                The possibilities with Google Gemini are endless. Whether you&apos;re looking to streamline your business operations, build cutting-edge AI applications, or automate complex workflows, Gemini has the tools to make it happen.
             </p>
         </section>
 
@@ -358,8 +358,7 @@ export default function Lesson3Page() {
   <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 max-w-3xl mx-auto">
     <h3 className="text-xl font-semibold mb-2 text-blue-800">Need Help?</h3>
     <p className="text-sm text-gray-700">
-      If you have any questions or need assistance, feel free to reach out to Google Cloud’s support team at{' '}
-      <a 
+      If you have any questions or need assistance, feel free to reach out to Google Clouds support team at <a 
         href="https://cloud.google.com/support" 
         target="_blank"
         rel="noopener noreferrer"

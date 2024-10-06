@@ -129,7 +129,7 @@ export default function DashboardPage() {
             >
               <div className="bg-gray-700 text-white p-4 rounded-lg mt-4 shadow-md">
                 <p className="text-sm mb-4">
-                  Test your knowledge of AI models with our AI Trainer Quiz. Challenge yourself and see how well you've mastered the concepts!
+                  Test your knowledge of AI models with our AI Trainer Quiz. Challenge yourself and see how well you&apos;ve mastered the concepts!
                 </p>
                 <Link href="/ai-game">
                   <button className="w-full py-2 px-4 bg-purple-600 text-white rounded-md hover:bg-purple-700">
