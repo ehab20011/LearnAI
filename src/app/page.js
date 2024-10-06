@@ -8,7 +8,7 @@ export default function HomePage() {
   const [isClient, setIsClient] = useState(false); // To track if the client has mounted
 
   const textList = [
-    " Welcome to HowToAI", 
+    " Welcome to LearnAI", 
     " How do I properly prompt a Large Language Model?", 
     " How much context does a prompt need?",
   ]; 

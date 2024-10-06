@@ -255,7 +255,7 @@ export default function HowToAIPage() {
         </div>
           
         {/* Dashboard Section */}
-        <div className="w-full max-w-4xl" style={{ marginTop: '25rem' }} classname="bg-white text-gray-900 rounded-xl p-8 shadow-2xl">
+        <div className="absolute bottom-40 w-full max-w-4xl" style={{ marginTop: '25rem' }} classname="bg-white text-gray-900 rounded-xl p-8 shadow-2xl">
           <h3 className="text-3xl font-bold mb-4">Hello {userProgress.firstName} {userProgress.lastName}!</h3>
           <p className="mb-6">Here is your progress so far:</p>
 
