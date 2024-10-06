@@ -85,18 +85,58 @@ const quizData = {
         answer: 1,
       },
     ],
-    googleGemini: [  // Add this for Google Gemini
-      {
-        question: "What is Google Gemini designed for?",
-        options: [
-          "Image processing and enhancement",
-          "Advanced large language model (LLM) tasks",
-          "Voice synthesis",
-          "Video editing",
-        ],
-        answer: 1,
-      },
-    ],
+    googleGemini: [  
+        {
+          question: "What is Google Gemini primarily designed to handle?",
+          options: [
+            "Multimodal AI tasks (text, audio, image, and video)",
+            "Only text generation",
+            "Only video editing",
+            "Strictly image processing",
+          ],
+          answer: 0, // Multimodal AI tasks
+        },
+        {
+          question: "What do you need to do first in order to use Google Gemini?",
+          options: [
+            "Create an account with Google Cloud and log in",
+            "Install a local version of Gemini",
+            "Download a third-party API tool",
+            "Submit a support ticket to Google",
+          ],
+          answer: 0, // Create an account with Google Cloud and log in
+        },
+        {
+          question: "Which feature of Google Gemini allows you to adjust the creativity of its responses?",
+          options: [
+            "Token limit",
+            "Grounding",
+            "Temperature setting",
+            "Region selection",
+          ],
+          answer: 2, // Temperature setting
+        },
+        {
+          question: "In Step 4 of the lesson, what does Google Gemini provide when asked 'What is Artificial Intelligence?'",
+          options: [
+            "An in-depth analysis of AI algorithms",
+            "A summary of AI, including types and key concepts",
+            "A detailed breakdown of AI's legal implications",
+            "A list of AI-related APIs",
+          ],
+          answer: 1, // A summary of AI, including types and key concepts
+        },
+        {
+          question: "Which Google Cloud service can Gemini seamlessly integrate with for large-scale data analysis?",
+          options: [
+            "Google Drive",
+            "BigQuery",
+            "Google Photos",
+            "Google Maps",
+          ],
+          answer: 1, // BigQuery
+        },
+      ],      
   };
   
 
