@@ -24,7 +24,7 @@ export default function Lesson2Page() {
               <li>How to interpret and iterate on results</li>
             </ul>
             <p className="mt-2">
-              By the end of this lesson, you'll be able to confidently use ChatGPT for various applications and improve your interaction with AI models.
+              By the end of this lesson, you&apos;ll be able to confidently use ChatGPT for various applications and improve your interaction with AI models.
             </p>
           </section>
     
@@ -34,11 +34,10 @@ export default function Lesson2Page() {
                 Step 1: Getting Started with ChatGPT
             </h2>
             <p className="mb-4">
-              ChatGPT, developed by OpenAI, is one of the most powerful AI language models. It can generate text, answer questions, help with coding, and much more. <strong>In this lesson, we'll cover how to set it up and make the most of it.</strong>
+              ChatGPT, developed by OpenAI, is one of the most powerful AI language models. It can generate text, answer questions, help with coding, and much more. <strong>In this lesson, we&apos;ll cover how to set it up and make the most of it.</strong>
             </p>
             <p className="mb-4">
-              To get started, you will need to create an account with OpenAI and access{' '}
-              <a 
+              To get started, you will need to create an account with OpenAI and access <a 
                 href="https://chat.openai.com/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -92,7 +91,7 @@ export default function Lesson2Page() {
               <h3 className="text-xl font-semibold mb-4 mt-2">The ChatGPT Dashboard</h3>
 
                 <p>
-                    Once you're logged in, you'll see the ChatGPT dashboard where you can start typing prompts or questions and also see your 
+                    Once you&apos;re logged in, you&apos;ll see the ChatGPT dashboard where you can start typing prompts or questions and also see your 
                     history on the left.
                 </p>
                 <p className="mt-4">
@@ -104,7 +103,7 @@ export default function Lesson2Page() {
                 </ul>
 
                 <br />
-                <strong>Now let's create your first interaction with ChatGPT!</strong>
+                <strong>Now let&apos;s create your first interaction with ChatGPT!</strong>
               </div>
             </div>
           </section>
@@ -144,7 +143,7 @@ export default function Lesson2Page() {
           <div className="w-full lg:w-1/2">
             <h3 className="text-xl font-semibold mb-4">Writing Your First Prompt</h3>
             <ol className="list-decimal list-inside space-y-2 text-lg">
-              <li>Type a question or command (e.g., "Explain the concept of AI.")</li>
+              <li>Type a question or command (e.g., &quot;Explain the concept of AI.&quot;)</li>
               <li>Press enter to submit your prompt.</li>
               <li>ChatGPT will respond with its answer.</li>
             </ol>
@@ -160,7 +159,7 @@ export default function Lesson2Page() {
   </h2>
 
   <p className="mb-4 text-lg">
-    After receiving an initial response from ChatGPT, it's often helpful to refine your prompt to get more accurate or detailed information. Let’s explore how to iterate on your conversation with the model.
+    After receiving an initial response from ChatGPT, it&apos;s often helpful to refine your prompt to get more accurate or detailed information. Let’s explore how to iterate on your conversation with the model.
   </p>
 
   {/* New subsection: Refining Prompts */}
@@ -217,7 +216,7 @@ export default function Lesson2Page() {
   <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 my-6 max-w-3xl mx-auto">
     <h3 className="text-xl font-semibold mb-2 text-blue-800">Breaking Down Queries</h3>
     <p className="mb-2 text-sm text-gray-700">
-      If you're working with a complicated question, you can break it down into manageable pieces. ChatGPT can address each part individually to provide a detailed and step-by-step explanation.
+      If you&apos;re working with a complicated question, you can break it down into manageable pieces. ChatGPT can address each part individually to provide a detailed and step-by-step explanation.
     </p>
     <p className="text-sm text-gray-700">
       For example, instead of asking, “Explain the history of AI,” you can ask:
@@ -259,7 +258,7 @@ export default function Lesson2Page() {
   </h2>
 
   <p className="mb-4 text-lg">
-    Although ChatGPT itself does not support direct file uploads, you can share links to files, such as PDFs or photos, to provide more context to your queries. Here's how to do it.
+    Although ChatGPT itself does not support direct file uploads, you can share links to files, such as PDFs or photos, to provide more context to your queries. Here&apos;s how to do it.
   </p>
 
   {/* New subsection: How to Attach Files */}
@@ -271,7 +270,7 @@ export default function Lesson2Page() {
     <ul className="list-decimal list-inside mt-2 space-y-2 text-sm text-gray-700">
       <li>Upload your file to a cloud storage service.</li>
       <li>Get the sharing link for the file. Make sure the link is public or viewable by anyone with the link.</li>
-      <li>Copy the link and paste it into your prompt to ChatGPT, along with instructions on what you want it to do with the file (e.g., "Please summarize the content of this PDF: [link]").</li>
+      <li>Copy the link and paste it into your prompt to ChatGPT, along with instructions on what you want it to do with the file (e.g., &quot;Please summarize the content of this PDF: [link]&quot;).</li>
     </ul>
   </div>
 
@@ -309,7 +308,7 @@ export default function Lesson2Page() {
   <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 my-6 max-w-3xl mx-auto">
     <h3 className="text-xl font-semibold mb-2 text-blue-800">Using Image Links</h3>
     <p className="text-sm text-gray-700">
-      Similar to PDFs, you can attach images by sharing a link to the image. Upload the image to a cloud storage service and paste the link in your ChatGPT prompt. Here's an example:
+      Similar to PDFs, you can attach images by sharing a link to the image. Upload the image to a cloud storage service and paste the link in your ChatGPT prompt. Here&apos;s an example:
     </p>
     <p className="italic text-sm bg-gray-100 p-4 rounded-lg">
       “Here’s a photo related to my question: 
@@ -319,7 +318,7 @@ export default function Lesson2Page() {
       >
         myphoto.png
       </a>. 
-      Can you describe what's happening in this image?”
+      Can you describe what&apos;s happening in this image?”
     </p>
   </div>
 </section>
@@ -332,7 +331,7 @@ export default function Lesson2Page() {
   </h2>
 
   <p className="mb-4 text-lg">
-    Sometimes, before sending your prompt to ChatGPT, it's useful to analyze how well-structured it is. Our web app includes a <strong>Prompt Analyzer Tool</strong> that can help you refine your prompts to ensure you're getting the best results from ChatGPT.
+    Sometimes, before sending your prompt to ChatGPT, it&apos;s useful to analyze how well-structured it is. Our web app includes a <strong>Prompt Analyzer Tool</strong> that can help you refine your prompts to ensure you&apos;re getting the best results from ChatGPT.
   </p>
 
   {/* New subsection: Benefits of the Prompt Analyzer */}
@@ -444,7 +443,7 @@ export default function Lesson2Page() {
   <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 my-6 max-w-3xl mx-auto">
     <h3 className="text-xl font-semibold mb-2 text-blue-800">Why Create Your Own GPT Model?</h3>
     <p className="text-sm text-gray-700">
-      Building your own GPT model allows you to tailor it to your specific needs, whether it's for conversational AI, customer service, coding assistance, or content generation. You can fine-tune the model for better accuracy in your domain.
+      Building your own GPT model allows you to tailor it to your specific needs, whether it&apos;s for conversational AI, customer service, coding assistance, or content generation. You can fine-tune the model for better accuracy in your domain.
     </p>
   </div>
 
@@ -466,7 +465,7 @@ export default function Lesson2Page() {
         <li>Sign up for an OpenAI API key on their platform.</li>
         <li>Choose the GPT version you want to work with (e.g., GPT-3, GPT-3.5, or GPT-4).</li>
         <li>Fine-tune the model using your specific dataset or input parameters.</li>
-        <li>Deploy the model using OpenAI's API for your project or app.</li>
+        <li>Deploy the model using OpenAI&apos;s API for your project or app.</li>
       </ol>
     </div>
   </div>
@@ -496,7 +495,7 @@ export default function Lesson2Page() {
     <div className="w-full lg:w-1/2">
       <h3 className="text-xl font-semibold mb-4">Deploy Your Custom GPT Model</h3>
       <p className="mb-4 text-lg">
-        Once you've fine-tuned your GPT model, you can deploy it to your web app or service. Use OpenAI's comprehensive API documentation to integrate it seamlessly into your application.
+        Once you&apos;ve fine-tuned your GPT model, you can deploy it to your web app or service. Use OpenAI&apos;s comprehensive API documentation to integrate it seamlessly into your application.
       </p>
     </div>
   </div>
@@ -584,7 +583,7 @@ print(response.choices[0].text)`}
   <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-200 my-6 max-w-3xl mx-auto">
     <h3 className="text-xl font-semibold mb-2 text-yellow-800">For Non-Developers</h3>
     <p className="text-sm text-gray-700">
-      If you're not a developer, you can <strong className="font-bold">skip this step</strong>. You don't need an API key for basic interactions with ChatGPT.
+      If you&apos;re not a developer, you can <strong className="font-bold">skip this step</strong>. You don&apos;t need an API key for basic interactions with ChatGPT.
     </p>
   </div>
 </section>
@@ -612,8 +611,7 @@ print(response.choices[0].text)`}
   <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 max-w-3xl mx-auto">
     <h3 className="text-xl font-semibold mb-2 text-blue-800">Need Help?</h3>
     <p className="text-sm text-gray-700">
-      If you have any questions or need assistance, feel free to reach out to OpenAI’s support team at{' '}
-      <a 
+      If you have any questions or need assistance, feel free to reach out to OpenAI’s support team at <a 
         href="mailto:support@openai.com" 
         className="text-blue-600 hover:text-blue-800 underline font-bold"
       >
