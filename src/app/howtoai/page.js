@@ -124,7 +124,7 @@ export default function HowToAIPage() {
               }`}
             >
               <Image
-                src="/images/google-notebook.png"
+                src="/images/google-notebook-logo.png"
                 alt="Google Logo"
                 width={500}
                 height={40}

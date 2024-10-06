@@ -291,7 +291,7 @@ export default function AiTrainerGamePage() {
               onClick={() => startQuiz('googleNotebook')}
             >
               <Image
-                src="/images/google-notebook.png"
+                src="/images/google-notebook-logo.png"
                 alt="Google NotebookLM"
                 width={150}
                 height={150}

@@ -92,7 +92,7 @@ export default function AboutUsPage() {
         <div className="flex flex-col md:flex-row items-center justify-center mt-6 space-y-6 md:space-y-0 md:space-x-8">
           <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white hover:scale-105 transition-transform duration-300">
             <Image
-              src="/images/google-notebook.png"
+              src="/images/google-notebook-logo.png"
               alt="Google NotebookLM Logo"
               width={128}
               height={128}
