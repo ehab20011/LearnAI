@@ -21,4 +21,4 @@ export const userDatabase = getAuth(app); // User login database
 export const db = getFirestore(app); // Firestore instance for your project
 
 // Access your userInfoDatabase collection
-export const userInfoDatabaseRef = collection(db, "users"); // Reference to the users collection
+export const userInfoDatabaseRef = collection(db, "userInfoDatabase"); // Reference to the users collection
